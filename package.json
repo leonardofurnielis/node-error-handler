@@ -1,5 +1,5 @@
 {
-  "name": "loopsailor-errorhandler",
+  "name": "loopsailor-http-status",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
