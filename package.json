@@ -1,0 +1,39 @@
+{
+  "name": "loopsailor-errorhandler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "keywords": [
+    "LoopSailor",
+    "express",
+    "error handler",
+    "error",
+    "handler"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardofurnielis/loopsailor-errorhandler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/leonardofurnielis/loopsailor-errorhandler/issues"
+  },
+  "homepage": "https://github.com/leonardofurnielis/loopsailor-errorhandler#readme",
+  "author": "Leonardo Furnielis <leonardo.furnielis1@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "coveralls": "3.0.3",
+    "eslint": "5.16.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-config-prettier": "4.3.0",
+    "eslint-plugin-import": "2.17.2",
+    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-prettier": "3.1.0",
+    "eslint-plugin-react": "7.13.0",
+    "jest": "24.8.0",
+    "prettier": "1.17.1"
+  },
+  "dependencies": {}
+}
