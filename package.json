@@ -1,7 +1,7 @@
 {
   "name": "loopsailor-error-handler",
   "version": "1.0.1",
-  "description": "Error handler for use in development and production environments",
+  "description": "Express error handlers for JSON APIs in development and production environments",
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage"
