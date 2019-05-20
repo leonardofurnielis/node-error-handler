@@ -1,6 +1,62 @@
 'use strcit';
 
 module.exports = {
+  // 1xx
+  100: 'CONTINUE',
+  '100_MESSAGE':
+    'The server has received the request headers and the client should proceed to send the request body.',
+  CONTINUE: 100,
+  101: 'SWITCHING PROTOCOLS',
+  '101_MESSAGE':
+    'The requester has asked the server to switch protocols and the server has agreed to do so.',
+  SWITCHING_PROTOCOLS: 101,
+  102: 'PROCESSING',
+  '102_MESSAGE':
+    'The server has received and is processing the request, but no response is available yet.',
+  PROCESSING: 102,
+  103: 'EARLY_HINTS',
+  '103_MESSAGE': 'Used to return some response headers before final HTTP message.',
+  EARLY_HINTS: 103,
+
+  // 2xx
+  200: 'OK',
+  '200_MESSAGE': 'The request has succeeded.',
+  OK: 200,
+  201: 'CREATED',
+  '201_MESSAGE': 'The request has succeeded and a new resource has been created as a result of it.',
+  CREATED: 201,
+  202: 'ACCEPTED',
+  '202_MESSAGE':
+    'The request has been accepted for processing, but the processing has not been completed.',
+  ACCEPTED: 202,
+  203: 'NON_AUTHORITATIVE_INFORMATION',
+  '203_MESSAGE':
+    'This response code means returned meta-information set is not exact set as available from the origin server.',
+  NON_AUTHORITATIVE_INFORMATION: 203,
+  204: 'NO CONTENT',
+  '204_MESSAGE': 'The server successfully processed the request and is not returning any content.',
+  NO_CONTENT: 204,
+  205: 'RESET CONTENT',
+  '205_MESSAGE':
+    'There is no content to send for this request, the user-agent may update its cached.',
+  RESET_CONTENT: 205,
+  206: 'PARTIAL CONTENT',
+  '206_MESSAGE':
+    'The server is delivering only part of the resource (byte serving) due to a range header sent by the client.',
+  PARTIAL_CONTENT: 206,
+  207: 'MULTI STATUS',
+  '207_MESSAGE':
+    'The message body that follows is by default an XML message and can contain a number of separate response codes, depending on how many sub-requests were made.',
+  MULTI_STATUS: 207,
+  208: 'ALREADY REPORTED',
+  '208_MESSAGE':
+    'The members of a DAV binding have already been enumerated in a preceding part of the (multistatus) response, and are not being included again.',
+  ALREADY_REPORTED: 208,
+  226: 'IM USED',
+  '226_MESSAGE':
+    'The server has fulfilled a request for the resource, and the response is a representation of the result of one or more instance-manipulations applied to the current instance.',
+  IM_USED: 226,
+
   // 3xx
   300: 'MULTIPLE CHOICES',
   '300_MESSAGE':
@@ -118,32 +174,32 @@ module.exports = {
   UNPROCESSABLE_ENTITY: 422,
 
   // 5xx
-  500: 'BAD REQUEST',
-  '500_MESSAGE': '	Invalid syntax for this request was provided.',
-  BAD_REQUEST: 500,
+  500: 'INTERNAL SERVER ERROR',
+  '500_MESSAGE': 'Unexpected internal server error.',
+  INTERNAL_SERVER_ERROR: 500,
 
-  501: 'UNAUTHORIZED',
-  '501_MESSAGE': 'You are unauthorized to access the requested resource. Please log in.',
-  UNAUTHORIZED: 501,
+  501: 'NOT IMPLEMENTED',
+  '501_MESSAGE': 'The requested resource is recognized but not implemented.',
+  NOT_IMPLEMENTED: 501,
 
-  502: 'PROXY AUTHENTICATION REQUIRED',
-  '502_MESSAGE': 'Authentication with proxy is required.',
-  PROXY_AUTHENTICATION_REQUIRED: 502,
+  502: 'BAD GATEWAY',
+  '502_MESSAGE': 'Invalid response received when acting as a proxy or gateway.',
+  BAD_GATEWAY: 502,
 
-  503: 'FORBIDDEN',
-  '503_MESSAGE': 'Your account is not authorized to access the requested resource.',
-  FORBIDDEN: 503,
+  503: 'SERVICE UNAVAILABLE',
+  '503_MESSAGE': 'The server is currently unavailable.',
+  SERVICE_UNAVAILABLE: 503,
 
-  504: 'NOT FOUND',
+  504: 'GATEWAY_TIMEOUT',
   '504_MESSAGE':
-    'We could not find the resource you requested. Please refer to the documentation for the list of resources.',
-  NOT_FOUND: 504,
+    '	Did not receive a timely response from upstream server while acting as a gateway or proxy.',
+  BAD_REQUEST: 504,
 
-  505: 'METHOD NOT ALLOWED',
-  '505_MESSAGE': 'This method type is not currently supported.',
-  METHOD_NOT_ALLOWED: 505,
+  505: 'HTTP VERSION NOT SUPPORTED',
+  '505_MESSAGE': 'The HTTP protocol version used in the request message is not supported.',
+  HTTP_VERSION_NOT_SUPPORTED: 505,
 
-  550: 'NOT ACCEPTABLE',
-  '550_MESSAGE': 'Acceptance header is invalid for this endpoint resource.',
-  NOT_ACCEPTABLE: 550,
+  550: 'INITIALIZATION FAILURE',
+  '550_MESSAGE': 'A failure occurred during initialization of services. API will be unavailable.',
+  INITIALIZATION_FAILURE: 550,
 };
