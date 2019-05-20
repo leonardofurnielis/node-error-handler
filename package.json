@@ -1,5 +1,5 @@
 {
-  "name": "loopsailor-http-status",
+  "name": "loopsailor-error-handler",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,18 +9,18 @@
   "keywords": [
     "LoopSailor",
     "express",
-    "error handler",
     "error",
-    "handler"
+    "handler",
+    "http"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leonardofurnielis/loopsailor-errorhandler.git"
+    "url": "git+https://github.com/leonardofurnielis/loopsailor-error-handler.git"
   },
   "bugs": {
-    "url": "https://github.com/leonardofurnielis/loopsailor-errorhandler/issues"
+    "url": "https://github.com/leonardofurnielis/loopsailor-error-handler/issues"
   },
-  "homepage": "https://github.com/leonardofurnielis/loopsailor-errorhandler#readme",
+  "homepage": "https://github.com/leonardofurnielis/loopsailor-error-handler#readme",
   "author": "Leonardo Furnielis <leonardo.furnielis1@gmail.com>",
   "license": "MIT",
   "devDependencies": {
