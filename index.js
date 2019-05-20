@@ -4,6 +4,7 @@ const status = require('./src/http-status');
 
 module.exports = env => {
   const production = env == 'production' ? true : false;
+
   return (err, req, res, next) => {
     const code = err.code || 500;
     const statusMessage = status[`${code}_MESSAGE`];
