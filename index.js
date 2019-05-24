@@ -1,12 +1,12 @@
 'use strcit';
 
-const status = require('./src/http-status');
+const codeValidator = require('./src/code-validator');
 
 module.exports = env => {
   const production = env == 'production' ? true : false;
 
   return (err, req, res, next) => {
-    const code = err.code || 500;
+    const code = codeValidator(err.code);
     const statusMessage = status[`${code}_MESSAGE`];
 
     const error = {
