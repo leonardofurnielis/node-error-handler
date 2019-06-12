@@ -7,7 +7,7 @@ module.exports = env => {
   const production = env == 'production' ? true : false;
 
   return (err, req, res, next) => {
-    const code = codeValidator(err.code);
+    const code = codeValidator(err.code) || 500;
     const statusMessage = status[`${code}_MESSAGE`];
 
     const error = {
