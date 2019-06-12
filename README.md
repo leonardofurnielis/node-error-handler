@@ -1,1 +1,1 @@
-# loopsailor-error-handler
+# express-error-handler
