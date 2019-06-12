@@ -10,7 +10,7 @@
     "express",
     "error",
     "handler",
-    "json",
+    "json"
   ],
   "repository": {
     "type": "git",
