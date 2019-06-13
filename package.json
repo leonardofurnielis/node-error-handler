@@ -1,5 +1,5 @@
 {
-  "name": "@leofur1/express-error-handler",
+  "name": "@leofur1/express-errorhandler",
   "version": "0.12.1",
   "description": "Express error handlers for JSON APIs in development and production environments",
   "main": "index.js",
@@ -14,12 +14,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leofur1/express-error-handler.git"
+    "url": "git+https://github.com/leofur1/express-errorhandler.git"
   },
   "bugs": {
-    "url": "https://github.com/leofur1/express-error-handler/issues"
+    "url": "https://github.com/leofur1/express-errorhandler/issues"
   },
-  "homepage": "https://github.com/leofur1/express-error-handler#readme",
+  "homepage": "https://github.com/leofur1/express-errorhandler#readme",
   "author": "Leonardo Furnielis <leonardo.furnielis1@gmail.com>",
   "license": "MIT",
   "devDependencies": {
