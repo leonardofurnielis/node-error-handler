@@ -1,36 +1,38 @@
 {
-  "name": "@leofur1/express-errorhandler",
-  "version": "0.12.1",
+  "name": "http-json-error-handler",
+  "version": "0.18.1",
   "description": "Express error handlers for JSON APIs in development and production environments",
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage"
   },
   "keywords": [
+    "api",
     "express",
     "error",
     "handler",
+    "http",
     "json"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leofur1/express-errorhandler.git"
+    "url": "git+https://github.com/leofur1/http-json-error-handler.git"
   },
   "bugs": {
-    "url": "https://github.com/leofur1/express-errorhandler/issues"
+    "url": "https://github.com/leofur1/http-json-error-handler/issues"
   },
-  "homepage": "https://github.com/leofur1/express-errorhandler#readme",
+  "homepage": "https://github.com/leofur1/http-json-error-handler#readme",
   "author": "Leonardo Furnielis <leonardo.furnielis1@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "coveralls": "3.0.4",
-    "eslint": "5.16.0",
-    "eslint-config-airbnb": "17.1.0",
-    "eslint-config-prettier": "4.3.0",
-    "eslint-plugin-import": "2.17.3",
-    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint": "6.0.1",
+    "eslint-config-airbnb": "17.1.1",
+    "eslint-config-prettier": "6.0.0",
+    "eslint-plugin-import": "2.18.0",
+    "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-prettier": "3.1.0",
-    "eslint-plugin-react": "7.13.0",
+    "eslint-plugin-react": "7.14.1",
     "jest": "24.8.0",
     "prettier": "1.18.2"
   },
