@@ -1,6 +1,6 @@
 {
   "name": "http-json-error-handler",
-  "version": "0.18.4",
+  "version": "0.18.5",
   "description": "Express error handlers for JSON APIs in development and production environments",
   "main": "index.js",
   "scripts": {
