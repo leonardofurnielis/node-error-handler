@@ -1,7 +1,7 @@
 'use strcit';
 
-const codeValidator = require('./src/code-validator');
-const status = require('./src/http-status');
+const codeValidator = require('./src/codeValidator');
+const status = require('./src/httpMessages');
 
 module.exports = env => {
   const production = env == 'production' ? true : false;

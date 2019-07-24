@@ -16,7 +16,10 @@
   "rules": {
     "prettier/prettier": ["error"],
     "no-param-reassign": "off",
-    "no-plusplus":"off",
+    "consistent-return": "off",
+    "no-plusplus": "off",
+    "no-console": "off",
+    "camelcase":"off",
     "strict": "off"
   }
 }
