@@ -7,15 +7,15 @@ module.exports = env => {
   const production = env == 'production' ? true : false;
 
   return (err, req, res, next) => {
-    const httpCode = codeValidator(err.http_code) || 500;
-    const statusMessage = status[`${httpCode}_MESSAGE`];
+    const statusCode = codeValidator(err.status_code) || 500;
+    const statusMessage = status[`${statusCode}_MESSAGE`];
 
     const error = {
-      message: status[httpCode],
+      message: status[statusCode],
       details: {},
       http_response: {
         message: statusMessage,
-        code: httpCode,
+        code: statusCode,
       },
     };
 
@@ -27,6 +27,6 @@ module.exports = env => {
       error.description = err.message;
     }
 
-    return res.status(httpCode).json(error);
+    return res.status(statusCode).json(error);
   };
 };

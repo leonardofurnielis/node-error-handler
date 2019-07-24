@@ -58,7 +58,7 @@ const app = express();
 // Your defined routes
 app.get('/foo', (req, res, next) => {
     const error = new Error('Missing fields `foo`.');
-    error.http_code = 400;
+    error.status_code = 400;
     next(error);
 });
 
@@ -76,7 +76,7 @@ The error could contain the following fields:
 | Error Key          | Purpose                                                                          |
 |--------------------|----------------------------------------------------------------------------------|
 | message (optional) | Error description.                                                               |
-| http_code (optional)    | HTTP status code for response. By default is set to 500 (Internal Server Error). |
+| status_code (optional)    | HTTP status code for response. By default is set to 500 (Internal Server Error). |
 
 
 ### HTTP JSON Error Example

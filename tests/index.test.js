@@ -23,7 +23,7 @@ describe('Handler an JSON error in production', () => {
     const req = httpMocks.createRequest();
     const res = httpMocks.createResponse();
     const error = new Error();
-    error.http_code = 400;
+    error.status_code = 400;
 
     HttpErrorHandler('production')(error, req, res, {});
 
@@ -38,7 +38,7 @@ describe('Handler an JSON error in production', () => {
     const req = httpMocks.createRequest();
     const res = httpMocks.createResponse();
     const error = new Error('Missing fields `name`.');
-    error.http_code = 400;
+    error.status_code = 400;
 
     HttpErrorHandler('production')(error, req, res, {});
 
@@ -71,7 +71,7 @@ describe('Handler an JSON error in development', () => {
     const req = httpMocks.createRequest();
     const res = httpMocks.createResponse();
     const error = new Error();
-    error.http_code = 400;
+    error.status_code = 400;
 
     HttpErrorHandler('development')(error, req, res, {});
 
@@ -87,7 +87,7 @@ describe('Handler an JSON error in development', () => {
     const req = httpMocks.createRequest();
     const res = httpMocks.createResponse();
     const error = new Error('Missing fields `name`.');
-    error.http_code = 400;
+    error.status_code = 400;
 
     HttpErrorHandler('development')(error, req, res, {});
 
