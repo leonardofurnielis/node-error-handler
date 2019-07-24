@@ -4,9 +4,9 @@ const codeValidator = require('./src/codeValidator');
 const status = require('./src/httpMessages');
 
 module.exports = env => {
-  const production = env == 'production' ? true : false;
+  const production = env === 'production';
 
-  return (err, req, res, next) => {
+  return (err, req, res) => {
     const statusCode = codeValidator(err.status_code) || 500;
     const statusMessage = status[`${statusCode}_MESSAGE`];
 
