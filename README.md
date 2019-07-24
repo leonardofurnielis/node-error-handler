@@ -26,7 +26,7 @@ then in your project require http-json-error-handler
   
 ```js
 
-const HttpErrorHandler =  require('http-json-error-handler');
+const httpErrorHandler =  require('http-json-error-handler');
 
 ```
 
@@ -46,7 +46,7 @@ $ git clone https://github.com/lfurnielis/http-json-error-handler.git
  
 ```js
 
-const HttpErrorHandler =  require('http-json-error-handler');
+const httpErrorHandler =  require('http-json-error-handler');
 const express = require('express');
 
 const app = express();
@@ -63,7 +63,7 @@ app.get('/foo', (req, res, next) => {
 });
 
 // HTTP error handler
-app.use(HttpErrorHandler(process.env.NODE_ENV));
+app.use(httpErrorHandler(process.env.NODE_ENV));
 
 ```
 
