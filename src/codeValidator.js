@@ -1,6 +1,6 @@
 'use strcit';
 
-const status = require('./http-status');
+const status = require('./httpMessages');
 
 module.exports = code => {
   code = Number(code);
