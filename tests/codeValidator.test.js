@@ -1,7 +1,5 @@
 'use strict';
 
-const assert = require('assert');
-
 const codeValidator = require('../src/codeValidator');
 
 describe('Validate code from err.code', () => {

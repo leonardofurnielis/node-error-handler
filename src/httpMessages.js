@@ -90,7 +90,7 @@ module.exports = {
 
   // 4xx
   400: 'BAD REQUEST',
-  '400_MESSAGE': '	Invalid syntax for this request was provided.',
+  '400_MESSAGE': 'Invalid syntax for this request was provided.',
   BAD_REQUEST: 400,
 
   401: 'UNAUTHORIZED',
@@ -125,15 +125,15 @@ module.exports = {
 
   409: 'CONFLICT',
   '409_MESSAGE':
-    '	The request could not be completed due to a conflict with the current state of the resource.',
+    'The request could not be completed due to a conflict with the current state of the resource.',
   CONFLICT: 409,
 
   410: 'GONE',
-  '410_MESSAGE': '	The requested resource is no longer available and has been permanently removed.',
+  '410_MESSAGE':'The requested resource is no longer available and has been permanently removed.',
   GONE: 410,
 
   411: 'LENGTH REQUIRED',
-  '411_MESSAGE': '	Length of the content is required, please include it with the request.',
+  '411_MESSAGE': 'Length of the content is required, please include it with the request.',
   LENGTH_REQUIRED: 411,
 
   412: 'PRECONDITION FAILED',
@@ -161,7 +161,7 @@ module.exports = {
   EXPECTATION_FAILED: 417,
 
   419: 'MISSING ARGUMENTS',
-  '419_MESSAGE': '	The requested resource is missing required arguments.',
+  '419_MESSAGE': 'The requested resource is missing required arguments.',
   MISSING_ARGUMENTS: 419,
 
   420: 'INVALID ARGUMENTS',
@@ -192,7 +192,7 @@ module.exports = {
 
   504: 'GATEWAY_TIMEOUT',
   '504_MESSAGE':
-    '	Did not receive a timely response from upstream server while acting as a gateway or proxy.',
+    'Did not receive a timely response from upstream server while acting as a gateway or proxy.',
   BAD_REQUEST: 504,
 
   505: 'HTTP VERSION NOT SUPPORTED',

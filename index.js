@@ -7,15 +7,15 @@ module.exports = env => {
   const production = env == 'production' ? true : false;
 
   return (err, req, res, next) => {
-    const code = codeValidator(err.code) || 500;
-    const statusMessage = status[`${code}_MESSAGE`];
+    const httpCode = codeValidator(err.http_code) || 500;
+    const statusMessage = status[`${httpCode}_MESSAGE`];
 
     const error = {
-      message: err.message || status[code],
+      message: status[httpCode],
       details: {},
       http_response: {
         message: statusMessage,
-        code: code,
+        code: httpCode,
       },
     };
 
@@ -23,6 +23,10 @@ module.exports = env => {
       error.details = err.stack;
     }
 
-    return res.status(code).json(error);
+    if (err.message && err.message !== '') {
+      error.description = err.message;
+    }
+
+    return res.status(httpCode).json(error);
   };
 };
