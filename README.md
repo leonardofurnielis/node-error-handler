@@ -2,22 +2,18 @@
 # http-json-error-handler
 
   
-
 [![Build Status](https://travis-ci.org/lfurnielis/http-json-error-handler.svg?branch=master)](https://travis-ci.org/lfurnielis/http-json-error-handler)
 [![License](https://img.shields.io/github/license/lfurnielis/http-json-error-handler.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 ![npm](https://img.shields.io/npm/dt/http-json-error-handler.svg)
 [![Coverage Status](https://coveralls.io/repos/github/lfurnielis/http-json-error-handler/badge.svg?branch=master)](https://coveralls.io/github/lfurnielis/http-json-error-handler?branch=master)
-
-  
+ 
 
 ## Installation
-
   
 
 You can download `http-json-error-handler` from NPM
 
   
-
 ```bash
 
 $ npm install http-json-error-handler --save
@@ -25,11 +21,9 @@ $ npm install http-json-error-handler --save
 ```
 
   
-
 then in your project require loopsailor-sort
 
   
-
 ```js
 
 const HttpErrorHandler =  require('http-json-error-handler');
@@ -37,11 +31,9 @@ const HttpErrorHandler =  require('http-json-error-handler');
 ```
 
   
-
 or GitHub
 
   
-
 ```bash
 
 $ git clone https://github.com/lfurnielis/http-json-error-handler.git
@@ -49,11 +41,9 @@ $ git clone https://github.com/lfurnielis/http-json-error-handler.git
 ```
 
   
-
 ## Guide
 
   
-
 ```js
 
 const HttpErrorHandler =  require('http-json-error-handler');
@@ -78,10 +68,8 @@ app.use(HttpErrorHandler(process.env.NODE_ENV));
 ```
 
   
-
 ### Definition of a "Error"
-
-  
+ 
 
 The error could contain the following fields:
 
