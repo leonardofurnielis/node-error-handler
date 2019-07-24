@@ -13,6 +13,7 @@ module.exports = env => {
     const error = {
       message: status[statusCode],
       details: {},
+      description: '',
       http_response: {
         message: statusMessage,
         code: statusCode,
@@ -23,8 +24,8 @@ module.exports = env => {
       error.details = err.stack;
     }
 
-    if (err.message && err.message !== '') {
-      error.description = err.message;
+    if (!err.message && err.message === '') {
+      delete error.description;
     }
 
     return res.status(statusCode).json(error);
