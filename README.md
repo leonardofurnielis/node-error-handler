@@ -2,7 +2,7 @@
 # http-json-error-handler
 
   
-[![Build Status](https://travis-ci.org/lfurnielis/http-json-error-handler.svg?branch=master)](https://travis-ci.org/lfurnielis/loopsailor-sort)
+[![Build Status](https://travis-ci.org/lfurnielis/http-json-error-handler.svg?branch=master)](https://travis-ci.org/lfurnielis/http-json-error-handler)
 [![License](https://img.shields.io/github/license/lfurnielis/http-json-error-handler.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 ![npm](https://img.shields.io/npm/dt/http-json-error-handler.svg)
 [![Coverage Status](https://coveralls.io/repos/github/lfurnielis/http-json-error-handler/badge.svg?branch=master)](https://coveralls.io/github/lfurnielis/http-json-error-handler?branch=master)
