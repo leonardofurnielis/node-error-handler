@@ -84,8 +84,8 @@ The error could contain the following fields:
 ```json
 {
   "message": "NOT FOUND",
-  "details": {},  // NODE_ENV !== production
-  "description": "The reference set does not exist.",  // optional 
+  "details": {}, 
+  "description": "The reference set does not exist.",
   "http_response": {
      "message": "We could not find the resource you requested. Please refer to the documentation for the list of resources.",
       "code": 404
