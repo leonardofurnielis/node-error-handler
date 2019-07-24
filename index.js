@@ -6,7 +6,8 @@ const status = require('./src/httpMessages');
 module.exports = env => {
   const production = env === 'production';
 
-  return (err, req, res) => {
+  // eslint-disable-next-line no-unused-vars
+  return (err, req, res, next) => {
     const statusCode = codeValidator(err.status_code) || 500;
     const statusMessage = status[`${statusCode}_MESSAGE`];
 
