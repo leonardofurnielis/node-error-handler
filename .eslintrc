@@ -17,6 +17,7 @@
     "prettier/prettier": ["error"],
     "no-param-reassign": "off",
     "consistent-return": "off",
+    "no-underscore-dangle": ["error", { "allow": ["_getData"] }],
     "no-plusplus": "off",
     "no-console": "off",
     "camelcase":"off",

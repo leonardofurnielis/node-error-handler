@@ -45,7 +45,6 @@ $ git clone https://github.com/lfurnielis/http-json-error-handler.git
 
  
 ```js
-
 const httpErrorHandler =  require('http-json-error-handler');
 const express = require('express');
 
