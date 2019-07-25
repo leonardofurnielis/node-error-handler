@@ -17,7 +17,7 @@ addons:
   sonarcloud:
     organization: "lfurnielis"
     token:
-      secure: "febc673d52c117ab9ffd149329982494e3dbb674" # encrypted value of your token
+      secure: "travis encrypt 80d44e14baa713d67cba130c6e44fcf3e0db6dad" # encrypted value of your token
 
 script:
 - npm test
