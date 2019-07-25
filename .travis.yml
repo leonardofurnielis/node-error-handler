@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - '10'
 
-  dist: trusty
+dist: trusty
 
 branches:
   only:
@@ -15,15 +15,8 @@ cache:
 install:
   - npm install
 
-addons:
-  sonarcloud:
-    organization: 'lfurnielis'
-    token:
-      secure: 'CM0aj/gwPddXPv2Mi5iFwTBDZ/JtntahQEmEBRYIwZJcC0ECpRTpID5RiHCGDWQVlr7wxxJaqMtLRceS+5q2t6OGFN5DxVhc9g3Z6+KRSa34sxIUmV699MN2y5tv1HTUCDknXOZS1Qd9tCJZbSSjypj6OiS5krsjrccNmlbvW6H5B72Ksbbr1uazoWR2mkigX4QJJgWvzjGbEK1sD+Cnz6jgmGessajV0/q7RCL+oZWtYoenJhOWM1KTcBwnYkdzZztfThnPssDyico905x49xYcciG41CS36JnaAmFiNtQcGQqDMVJRuXg/wzRqtkssVA7h+ab7jX1Gizz5DEUNhXFXKc9gTu0iZV99ABHdq+tF4RrCxv2zh1yyMHiwckFJFuNCfZFa5Nl5v29XuNCRQsXnxE8sJ0g+0rDXlkR3ZeGMTTUqnC8Ian1q3BSztUNFspVq1aZNdq8mahwwjT+TtTp7gzTZ+gvhkcQrtP+6kH5ItwVZ9Mca9GuHmBYhWew1dBn+msCu3gewe4m1DgVX55J2z63//+OjyqJSMhIxZPe1hpvovw9SjCDO0sadltqruUgnFG7MqxmEqxjkmlEP9hI8Tznw+KqQmEfE+0tIyRVtKYVUI6zAkUiUzEfKfHYMROKhmkGs6eNruG8dH+b5MpJ6qSCA/7VDdcuF5Ofa7GA='
-
 script:
   - npm test
-  - sonar-scanner
 
 after_script:
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
