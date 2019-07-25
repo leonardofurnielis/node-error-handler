@@ -1,33 +1,30 @@
 language: node_js
 node_js:
-- "10"
+  - '10'
 
 branches:
   only:
-  - master
+    - master
 
 cache:
   directories:
-  - node_modules
+    - node_modules
 
 install:
-- npm install
+  - npm install
 
 addons:
   sonarcloud:
-    organization: "lfurnielis"
+    organization: 'lfurnielis'
     token:
-      secure: "80d44e14baa713d67cba130c6e44fcf3e0db6dad" # encrypted value of your token
+      secure: 'AmWbmS8fNopC1BbH878GvDEHPA2CdStAS9vliX5VJY0HwzjR1ZJadKO33bZJdhlL82+wlBssAxppA5A1mUhW49oJ2+MLqt7HSlaM5g2hq4QWfWTCVvfasYt9u/pJoLavfqFFcHKdYOUtWJ2jj39ktiEIjD7hKioUzYCfTDageFe3NNw2BfTECBiLBcSOzOUspKk9Qd0H7O7GiX+Rmb18Yh30OYpIMS+59ZMjKYRCbWtLw/uIU2E1ACbz2yNU7OOH/HdI5bGx2M4qFfUC4A918YeMr5OCPzQHyAeXDMR/DfECMsRl3C5KMYoGKuRSvSEPfAVlG8cr+ICwVmAX5KGA71MvM5vzPKadfV5GGPFdkuKXVT+yOUszEU6VivcCv9xUqQ+D9//HPRdM5GYKO02qoL86Ib53H+nn4jc+6f6ynQpxhJYj7Qxv4wy8fvSblMKTIex2UKLwWU7yx9rL1Au1NQ/1ghn/nVJXkZzJN/IifIa6Fs1gwv42pYVfcxrk4j1nDfzHhEYLxZrpwLKb+pCj6XPnP/8mLGcPqQLTVOMBuTV0GH8EA9JX0+EGcj/xvQtMtOXlDrtE45VOdkHBazxEwMXXzJSDrRiWRqZuK7ccIie+eBHC2eWAR1bmbU9wOiEgBRcQXHMqQ/5ZnoJ3XL9ZddOdM/DfoS2KgSK4rY679S8='
 
 script:
-- npm test
-- sonar-scanner
+  - npm test
+  - sonar-scanner
 
 after_script:
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 
 notifications:
   email: false
-
-
-# febc673d52c117ab9ffd149329982494e3dbb674
