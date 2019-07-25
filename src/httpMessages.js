@@ -129,7 +129,7 @@ module.exports = {
   CONFLICT: 409,
 
   410: 'GONE',
-  '410_MESSAGE':'The requested resource is no longer available and has been permanently removed.',
+  '410_MESSAGE': 'The requested resource is no longer available and has been permanently removed.',
   GONE: 410,
 
   411: 'LENGTH REQUIRED',
@@ -193,7 +193,7 @@ module.exports = {
   504: 'GATEWAY_TIMEOUT',
   '504_MESSAGE':
     'Did not receive a timely response from upstream server while acting as a gateway or proxy.',
-  BAD_REQUEST: 504,
+  GATEWAY_TIMEOUT: 504,
 
   505: 'HTTP VERSION NOT SUPPORTED',
   '505_MESSAGE': 'The HTTP protocol version used in the request message is not supported.',
