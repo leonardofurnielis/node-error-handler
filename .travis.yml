@@ -13,11 +13,21 @@ cache:
 install:
 - npm install
 
+addons:
+  sonarcloud:
+    organization: "lfurnielis"
+    token:
+      secure: "febc673d52c117ab9ffd149329982494e3dbb674" # encrypted value of your token
+
 script:
 - npm test
+- sonar-scanner
 
 after_script:
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 
 notifications:
   email: false
+
+
+# febc673d52c117ab9ffd149329982494e3dbb674
