@@ -4,7 +4,7 @@ const httpMocks = require('node-mocks-http');
 
 const HttpErrorHandler = require('../index');
 
-describe('Handler an JSON error in production', () => {
+describe('HTTP Handler an JSON error', () => {
   test('Should return default error when no args passed', async () => {
     const req = httpMocks.createRequest();
     const res = httpMocks.createResponse();
@@ -14,89 +14,36 @@ describe('Handler an JSON error in production', () => {
 
     const response = JSON.parse(res._getData());
 
-    expect(response.message).toEqual('INTERNAL SERVER ERROR');
-    expect(response.http_response.message).toEqual('Unexpected internal server error.');
-    expect(response.http_response.code).toEqual(500);
+    expect(response.error.message).toEqual('INTERNAL SERVER ERROR');
+    expect(response.error.code).toEqual(500);
   });
 
-  test('Should return error 400 when err.code: 400', async () => {
+  test('Should return error code 400', async () => {
     const req = httpMocks.createRequest();
     const res = httpMocks.createResponse();
     const error = new Error();
-    error.status_code = 400;
+    error.status = 400;
 
     HttpErrorHandler('production')(error, req, res, {});
 
     const response = JSON.parse(res._getData());
 
-    expect(response.message).toEqual('BAD REQUEST');
-    expect(response.http_response.message).toEqual('Invalid syntax for this request was provided.');
-    expect(response.http_response.code).toEqual(400);
+    expect(response.error.message).toEqual('BAD REQUEST');
+    expect(response.error.code).toEqual(400);
   });
 
-  test('Should return error 400 when err.code: 400 with custom message', async () => {
+  test('Should return error code 400 with details', async () => {
     const req = httpMocks.createRequest();
     const res = httpMocks.createResponse();
-    const error = new Error('Missing fields `name`.');
-    error.status_code = 400;
+    const error = new Error('Missing fields: [name]');
+    error.status = 400;
 
     HttpErrorHandler('production')(error, req, res, {});
 
     const response = JSON.parse(res._getData());
-
-    expect(response.message).toEqual('BAD REQUEST');
-    expect(response.description).toEqual('Missing fields `name`.');
-    expect(response.http_response.message).toEqual('Invalid syntax for this request was provided.');
-    expect(response.http_response.code).toEqual(400);
-  });
-});
-
-describe('Handler an JSON error in development', () => {
-  test('Should return default error when no args passed', async () => {
-    const req = httpMocks.createRequest();
-    const res = httpMocks.createResponse();
-    const error = new Error();
-
-    HttpErrorHandler('development')(error, req, res, {});
-
-    const response = JSON.parse(res._getData());
-
-    expect(response.message).toEqual('INTERNAL SERVER ERROR');
-    expect(response.details).not.toBeUndefined();
-    expect(response.http_response.message).toEqual('Unexpected internal server error.');
-    expect(response.http_response.code).toEqual(500);
-  });
-
-  test('Should return error 400 when err.code: 400', async () => {
-    const req = httpMocks.createRequest();
-    const res = httpMocks.createResponse();
-    const error = new Error();
-    error.status_code = 400;
-
-    HttpErrorHandler('development')(error, req, res, {});
-
-    const response = JSON.parse(res._getData());
-
-    expect(response.message).toEqual('BAD REQUEST');
-    expect(response.details).not.toBeUndefined();
-    expect(response.http_response.message).toEqual('Invalid syntax for this request was provided.');
-    expect(response.http_response.code).toEqual(400);
-  });
-
-  test('Should return error 400 when err.code: 400 with custom message', async () => {
-    const req = httpMocks.createRequest();
-    const res = httpMocks.createResponse();
-    const error = new Error('Missing fields `name`.');
-    error.status_code = 400;
-
-    HttpErrorHandler('development')(error, req, res, {});
-
-    const response = JSON.parse(res._getData());
-
-    expect(response.message).toEqual('BAD REQUEST');
-    expect(response.details).not.toBeUndefined();
-    expect(response.description).toEqual('Missing fields `name`.');
-    expect(response.http_response.message).toEqual('Invalid syntax for this request was provided.');
-    expect(response.http_response.code).toEqual(400);
+    console.log(response);
+    expect(response.error.message).toEqual('BAD REQUEST');
+    expect(response.error.details).toEqual('Missing fields: [name]');
+    expect(response.error.code).toEqual(400);
   });
 });
