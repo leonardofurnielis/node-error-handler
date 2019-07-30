@@ -38,8 +38,8 @@ const express = require('express');
 const app = express();
 
 // Your defined middlewares
-..
-..
+...
+...
 
 // Your defined routes
 app.get('/foo', (req, res, next) => {
