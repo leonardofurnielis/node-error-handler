@@ -3,7 +3,7 @@
 const codeValidator = require('./src/codeValidator');
 const status = require('./src/httpMessages');
 
-module.exports = env => {
+module.exports = () => {
   // eslint-disable-next-line no-unused-vars
   return (err, req, res, next) => {
     const statusCode = codeValidator(err.status) || 500;
