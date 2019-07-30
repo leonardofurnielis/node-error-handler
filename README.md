@@ -43,7 +43,7 @@ const app = express();
 
 // Your defined routes
 app.get('/foo', (req, res, next) => {
-    const error = new Error('Missing fields: foo');
+    const error = new Error('Missing field(s): foo');
     error.status = 400;
     error.code = 10401;
     next(error);
@@ -70,7 +70,7 @@ The error could contain the following fields:
   "error": {
     "code": 10401,
     "message": "BAD REQUEST",
-    "details": "Missing fields: foo"
+    "details": "Missing field(s): foo"
   }
 }
 ```
