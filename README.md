@@ -57,7 +57,7 @@ app.use(httpErrorHandler({
 
 ## Options
 
-```json
+```js
 
 {
   stderr: false // Log error in console, by default is set to false
