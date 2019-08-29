@@ -71,9 +71,9 @@ The error could contain the following fields:
 
 | Error Key          | Purpose                                                                          |
 | ------------------ | -------------------------------------------------------------------------------- |
-| message (optional) | Error details.                                                                   |
-| status (optional)  | HTTP status code for response. By default is set to 500 (Internal Server Error). |
-| code (optional)    | Error code. By default is the same as "status".                                  |
+| [message] | Error details.                                                                   |
+| [status]  | HTTP status code for response. By default is set to 500 (Internal Server Error). |
+| [code]    | Error code. By default is the same as "status".                                  |
 
 ### HTTP JSON Error Example
 
