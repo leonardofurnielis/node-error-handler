@@ -1,8 +1,8 @@
 'use strict';
 
-const codeValidator = require('../src/codeValidator');
+const codeValidator = require('../lib/status-code-validator');
 
-describe('Validate code from err.code', () => {
+describe('Status code validator from err.code', () => {
   test('Should return undefined, using not valid http code', () => {
     expect(codeValidator(600)).toEqual(undefined);
   });

@@ -41,9 +41,21 @@ describe('HTTP Handler an JSON error', () => {
     HttpErrorHandler('production')(error, req, res, {});
 
     const response = JSON.parse(res._getData());
-    console.log(response);
     expect(response.error.message).toEqual('BAD REQUEST');
     expect(response.error.details).toEqual('Missing fields: [name]');
+    expect(response.error.code).toEqual(400);
+  });
+
+  test('Should log error in console.error', async () => {
+    const req = httpMocks.createRequest();
+    const res = httpMocks.createResponse();
+    const error = new Error();
+    error.status = 400;
+
+    HttpErrorHandler({ stderr: true })(error, req, res, {});
+
+    const response = JSON.parse(res._getData());
+    expect(response.error.message).toEqual('BAD REQUEST');
     expect(response.error.code).toEqual(400);
   });
 });

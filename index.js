@@ -1,12 +1,15 @@
 'use strcit';
 
-const codeValidator = require('./src/codeValidator');
-const status = require('./src/httpMessages');
+const statusCodeValidator = require('./lib/status-code-validator');
+const status = require('./lib/http-messages');
+const logger = require('./hooks/logger');
 
-module.exports = () => {
+module.exports = options => {
+  const stderr = options.stderr || false;
+
   // eslint-disable-next-line no-unused-vars
   return (err, req, res, next) => {
-    const statusCode = codeValidator(err.status) || 500;
+    const statusCode = statusCodeValidator(err.status) || 500;
     const code = err.code || statusCode;
 
     const errorHandler = {
@@ -19,6 +22,10 @@ module.exports = () => {
 
     if (!err.message || err.message === '') {
       delete errorHandler.error.details;
+    }
+
+    if (stderr) {
+      logger.error(errorHandler);
     }
 
     return res.status(statusCode).json(errorHandler);
