@@ -50,7 +50,19 @@ app.get('/foo', (req, res, next) => {
 });
 
 // HTTP error handler
-app.use(httpErrorHandler());
+app.use(httpErrorHandler({
+	stderr: true // By default is set to false
+}));
+```
+
+## Options
+
+```json
+
+{
+  stderr: false // Log error in console, by default is set to false
+}
+
 ```
 
 ### Definition of a "Error"
