@@ -18,7 +18,7 @@ $ npm install http-json-error-handler --save
 then in your project require http-json-error-handler
 
 ```js
-const httpErrorHandler = require('http-json-error-handler');
+const errorHandler = require('http-json-error-handler');
 ```
 
 or GitHub
