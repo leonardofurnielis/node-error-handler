@@ -32,7 +32,7 @@ $ git clone https://github.com/lfurnielis/http-json-error-handler.git
 ## Guide
 
 ```js
-const httpErrorHandler =  require('http-json-error-handler');
+const errorHandler =  require('http-json-error-handler');
 const express = require('express');
 
 const app = express();
@@ -50,7 +50,7 @@ app.get('/foo', (req, res, next) => {
 });
 
 // HTTP error handler
-app.use(httpErrorHandler({
+app.use(errorHandler({
 	stderr: true // By default is set to false
 }));
 ```
