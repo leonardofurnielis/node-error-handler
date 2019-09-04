@@ -62,7 +62,7 @@ app.use(errorHandler({
 
 {
   stderr: false // Log error in console, Default: false
-  stackerr: false // Log error stack in console, Default: false
+  stackerr: false // Log error stack in console only for statusCode >= 500, Default: false
 }
 
 ```
