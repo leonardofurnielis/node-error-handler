@@ -61,8 +61,8 @@ app.use(errorHandler({
 ```js
 
 {
-  stderr: false // Log error using `console.error()`, Default: false
-  stackerr: false // Log error stack using `console.debug()` only for statusCode >= 500, Default: false
+  stderr: false // Log error using console.error(), Default: false
+  stackerr: false // Log error stack using console.debug() only for statusCode >= 500, Default: false
 }
 
 ```
