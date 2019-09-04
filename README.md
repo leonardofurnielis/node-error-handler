@@ -11,9 +11,7 @@
 You can download `http-json-error-handler` from NPM
 
 ```bash
-
 $ npm install http-json-error-handler --save
-
 ```
 
 then in your project require http-json-error-handler
@@ -25,9 +23,7 @@ const errorHandler = require('http-json-error-handler');
 or GitHub
 
 ```bash
-
 $ git clone https://github.com/lfurnielis/http-json-error-handler.git
-
 ```
 
 ## Guide
