@@ -8,7 +8,7 @@ log4js.configure({
     stderrFilter: {
       type: 'logLevelFilter',
       appender: 'stderr',
-      level: 'error',
+      level: 'debug',
       maxLevel: 'error',
     },
   },
@@ -20,7 +20,7 @@ log4js.configure({
   },
 });
 
-const logger = log4js.getLogger('http-json-error');
-logger.level = 'error';
+const logger = log4js.getLogger('http-json-error-handler');
+logger.level = 'debug';
 
 module.exports = logger;

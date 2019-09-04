@@ -4,8 +4,9 @@ const statusCodeValidator = require('./lib/status-code-validator');
 const status = require('./lib/http-messages');
 const logger = require('./hooks/logger');
 
-module.exports = options => {
+module.exports = (options = {}) => {
   const stderr = options.stderr || false;
+  const stackerr = options.stackerr || false;
 
   // eslint-disable-next-line no-unused-vars
   return (err, req, res, next) => {
@@ -26,6 +27,10 @@ module.exports = options => {
 
     if (stderr) {
       logger.error(errorHandler);
+    }
+
+    if (stackerr) {
+      logger.debug(err.stack);
     }
 
     return res.status(statusCode).json(errorHandler);

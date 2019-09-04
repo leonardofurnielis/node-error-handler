@@ -1,5 +1,6 @@
 # http-json-error-handler
 
+![npm](https://img.shields.io/npm/v/http-json-error-handler)
 [![Build Status](https://travis-ci.org/lfurnielis/http-json-error-handler.svg?branch=master)](https://travis-ci.org/lfurnielis/http-json-error-handler)
 ![GitHub](https://img.shields.io/github/license/lfurnielis/http-json-error-handler.svg)
 ![npm](https://img.shields.io/npm/dm/http-json-error-handler.svg)
@@ -51,7 +52,7 @@ app.get('/foo', (req, res, next) => {
 
 // HTTP error handler
 app.use(errorHandler({
-	stderr: true // By default is set to false
+	stderr: true // Default: false
 }));
 ```
 
@@ -60,7 +61,8 @@ app.use(errorHandler({
 ```js
 
 {
-  stderr: false // Log error in console, by default is set to false
+  stderr: false // Log error in console, Default: false
+  stackerr: false // Log error stack in console, Default: false
 }
 
 ```
@@ -72,8 +74,8 @@ The error could contain the following fields:
 | Error Key          | Purpose                                                                          |
 | ------------------ | -------------------------------------------------------------------------------- |
 | [message] | Error details.                                                                   |
-| [status]  | HTTP status code for response. By default is set to 500 (Internal Server Error). |
-| [code]    | Error code. By default is the same as "status".                                  |
+| [status]  | HTTP status code for response. Default: 500 (Internal Server Error). |
+| [code]    | Error code. Default: same as "status".                                  |
 
 ### HTTP JSON Error Example
 

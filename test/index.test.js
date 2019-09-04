@@ -2,7 +2,7 @@
 
 const httpMocks = require('node-mocks-http');
 
-const HttpErrorHandler = require('../index');
+const errorHandler = require('../index');
 
 describe('HTTP Handler an JSON error', () => {
   test('Should return default error when no args passed', async () => {
@@ -10,7 +10,7 @@ describe('HTTP Handler an JSON error', () => {
     const res = httpMocks.createResponse();
     const error = new Error();
 
-    HttpErrorHandler('production')(error, req, res, {});
+    errorHandler()(error, req, res, {});
 
     const response = JSON.parse(res._getData());
 
@@ -24,7 +24,7 @@ describe('HTTP Handler an JSON error', () => {
     const error = new Error();
     error.status = 400;
 
-    HttpErrorHandler('production')(error, req, res, {});
+    errorHandler()(error, req, res, {});
 
     const response = JSON.parse(res._getData());
 
@@ -38,7 +38,7 @@ describe('HTTP Handler an JSON error', () => {
     const error = new Error('Missing fields: [name]');
     error.status = 400;
 
-    HttpErrorHandler('production')(error, req, res, {});
+    errorHandler()(error, req, res, {});
 
     const response = JSON.parse(res._getData());
     expect(response.error.message).toEqual('BAD REQUEST');
@@ -46,13 +46,26 @@ describe('HTTP Handler an JSON error', () => {
     expect(response.error.code).toEqual(400);
   });
 
-  test('Should log error in console.error', async () => {
+  test('Should log error in logger.error', async () => {
     const req = httpMocks.createRequest();
     const res = httpMocks.createResponse();
     const error = new Error();
     error.status = 400;
 
-    HttpErrorHandler({ stderr: true })(error, req, res, {});
+    errorHandler({ stderr: true })(error, req, res, {});
+
+    const response = JSON.parse(res._getData());
+    expect(response.error.message).toEqual('BAD REQUEST');
+    expect(response.error.code).toEqual(400);
+  });
+
+  test('Should log error in logger.debug', async () => {
+    const req = httpMocks.createRequest();
+    const res = httpMocks.createResponse();
+    const error = new Error();
+    error.status = 400;
+
+    errorHandler({ stackerr: true })(error, req, res, {});
 
     const response = JSON.parse(res._getData());
     expect(response.error.message).toEqual('BAD REQUEST');
