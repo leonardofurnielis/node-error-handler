@@ -29,7 +29,7 @@ module.exports = (options = {}) => {
       logger.error(errorHandler);
     }
 
-    if (stackerr) {
+    if (stackerr && statusCode >= 500) {
       logger.debug(err.stack);
     }
 
