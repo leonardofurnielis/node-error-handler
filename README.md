@@ -46,7 +46,7 @@ app.get('/foo', (req, res, next) => {
     next(error);
 });
 
-// HTTP error handler
+// HTTP errorhandler
 app.use(errorhandler({
   log: true, 
   debug: true 
