@@ -1,5 +1,5 @@
 {
-  "name": "request-errorhandler",
+  "name": "request-json-errorhandler",
   "version": "1.0.0",
   "description": "Express error handlers for JSON APIs in development and production environments",
   "main": "index.js",
@@ -12,17 +12,17 @@
     "error",
     "handler",
     "request",
-    "request-errorhandler",
+    "request-json-errorhandler",
     "json"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leofur1/request-errorhandler.git"
+    "url": "git+https://github.com/leofur1/request-json-errorhandler.git"
   },
   "bugs": {
-    "url": "https://github.com/leofur1/request-errorhandler/issues"
+    "url": "https://github.com/leofur1/request-json-errorhandler/issues"
   },
-  "homepage": "https://github.com/leofur1/request-errorhandler#readme",
+  "homepage": "https://github.com/leofur1/request-json-errorhandler#readme",
   "author": "Leonardo Furnielis <leonardo.furnielis1@gmail.com>",
   "license": "MIT",
   "devDependencies": {

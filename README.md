@@ -1,29 +1,29 @@
-# request-errorhandler
+# request-json-errorhandler
 
-![npm](https://img.shields.io/npm/v/request-errorhandler)
-[![Build Status](https://travis-ci.org/lfurnielis/request-errorhandler.svg?branch=master)](https://travis-ci.org/lfurnielis/request-errorhandler)
-![GitHub](https://img.shields.io/github/license/lfurnielis/request-errorhandler.svg)
-![npm](https://img.shields.io/npm/dm/request-errorhandler.svg)
-[![Coverage Status](https://coveralls.io/repos/github/lfurnielis/request-errorhandler/badge.svg?branch=master)](https://coveralls.io/github/lfurnielis/request-errorhandler?branch=master)
+![npm](https://img.shields.io/npm/v/request-json-errorhandler)
+[![Build Status](https://travis-ci.org/lfurnielis/request-json-errorhandler.svg?branch=master)](https://travis-ci.org/lfurnielis/request-json-errorhandler)
+![GitHub](https://img.shields.io/github/license/lfurnielis/request-json-errorhandler.svg)
+![npm](https://img.shields.io/npm/dm/request-json-errorhandler.svg)
+[![Coverage Status](https://coveralls.io/repos/github/lfurnielis/request-json-errorhandler/badge.svg?branch=master)](https://coveralls.io/github/lfurnielis/request-json-errorhandler?branch=master)
 
 ## Installation
 
-You can download `request-errorhandler` from NPM
+You can download `request-json-errorhandler` from NPM
 
 ```bash
-$ npm install request-errorhandler --save
+$ npm install request-json-errorhandler --save
 ```
 
-then in your project require request-errorhandler
+then in your project require request-json-errorhandler
 
 ```js
-const errorhandler = require('request-errorhandler');
+const errorhandler = require('request-json-errorhandler');
 ```
 
 or GitHub
 
 ```bash
-$ git clone https://github.com/lfurnielis/request-errorhandler.git
+$ git clone https://github.com/lfurnielis/request-json-errorhandler.git
 ```
 
 ## Guide
@@ -32,7 +32,7 @@ In an Express-based application:
 
 ```js
 const express = require('express');
-const errorhandler =  require('request-errorhandler');
+const errorhandler =  require('request-json-errorhandler');
 
 const app = express();
 
