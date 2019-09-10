@@ -28,6 +28,8 @@ $ git clone https://github.com/lfurnielis/request-errorhandler.git
 
 ## Guide
 
+In an Express-based application:
+
 ```js
 const express = require('express');
 const errorhandler =  require('request-errorhandler');
@@ -35,7 +37,6 @@ const errorhandler =  require('request-errorhandler');
 const app = express();
 
 // Your defined middlewares
-...
 ...
 
 // Your defined routes
