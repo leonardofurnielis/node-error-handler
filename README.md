@@ -58,7 +58,7 @@ app.use(errorhandler({
 ```js
 {
   log: false; // Log errors using console.error(), Default: false
-  debug: false; // Log error.stack using console.debug() only for statusCode >= 500, Default: false
+  debug: false; // Log error.stack using console.debug(), Default: false
 }
 ```
 
