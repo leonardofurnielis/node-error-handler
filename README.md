@@ -41,8 +41,7 @@ const app = express();
 // Your defined routes
 app.get('/foo', (req, res, next) => {
     const error = new Error('Missing field(s): foo');
-    error.status = 400;
-    error.code = 10401;
+    error.code = 422;
     next(error);
 });
 
