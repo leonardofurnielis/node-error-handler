@@ -48,8 +48,8 @@ app.get('/foo', (req, res, next) => {
 
 // HTTP error handler
 app.use(errorhandler({
-  log: true // Default: false
-  debug: true // // Default: false
+  log: true, 
+  debug: true 
 }));
 ```
 
