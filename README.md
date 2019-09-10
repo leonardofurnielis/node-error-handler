@@ -17,7 +17,7 @@ $ npm install request-errorhandler --save
 then in your project require request-errorhandler
 
 ```js
-const errorhandler = require('request-errorhandler');
+const errorHandler = require('request-errorhandler');
 ```
 
 or GitHub
@@ -32,7 +32,7 @@ In an Express-based application:
 
 ```js
 const express = require('express');
-const errorhandler =  require('request-errorhandler');
+const errorHandler =  require('request-errorhandler');
 
 const app = express();
 
@@ -47,7 +47,7 @@ app.get('/foo', (req, res, next) => {
 });
 
 // HTTP error handler
-app.use(errorhandler({
+app.use(errorHandler({
   log: true // Default: false
   debug: true // // Default: false
 }));
