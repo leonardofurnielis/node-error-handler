@@ -78,7 +78,7 @@ The error could contain the following fields:
   "error": {
     "status_code": 422,
     "message": "Missing field(s): foo",
-    "details": "MISSING_REQUIRED_FIELDS"
+    "code": "MISSING_REQUIRED_FIELDS"
   }
 }
 ```
