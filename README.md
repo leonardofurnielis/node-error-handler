@@ -29,8 +29,8 @@ $ git clone https://github.com/lfurnielis/request-errorhandler.git
 ## Guide
 
 ```js
-const errorhandler =  require('request-errorhandler');
 const express = require('express');
+const errorhandler =  require('request-errorhandler');
 
 const app = express();
 
