@@ -1,35 +1,35 @@
-# http-json-error-handler
+# request-errorhandler
 
-![npm](https://img.shields.io/npm/v/http-json-error-handler)
-[![Build Status](https://travis-ci.org/lfurnielis/http-json-error-handler.svg?branch=master)](https://travis-ci.org/lfurnielis/http-json-error-handler)
-![GitHub](https://img.shields.io/github/license/lfurnielis/http-json-error-handler.svg)
-![npm](https://img.shields.io/npm/dm/http-json-error-handler.svg)
-[![Coverage Status](https://coveralls.io/repos/github/lfurnielis/http-json-error-handler/badge.svg?branch=master)](https://coveralls.io/github/lfurnielis/http-json-error-handler?branch=master)
+![npm](https://img.shields.io/npm/v/request-errorhandler)
+[![Build Status](https://travis-ci.org/lfurnielis/request-errorhandler.svg?branch=master)](https://travis-ci.org/lfurnielis/request-errorhandler)
+![GitHub](https://img.shields.io/github/license/lfurnielis/request-errorhandler.svg)
+![npm](https://img.shields.io/npm/dm/request-errorhandler.svg)
+[![Coverage Status](https://coveralls.io/repos/github/lfurnielis/request-errorhandler/badge.svg?branch=master)](https://coveralls.io/github/lfurnielis/request-errorhandler?branch=master)
 
 ## Installation
 
-You can download `http-json-error-handler` from NPM
+You can download `request-errorhandler` from NPM
 
 ```bash
-$ npm install http-json-error-handler --save
+$ npm install request-errorhandler --save
 ```
 
-then in your project require http-json-error-handler
+then in your project require request-errorhandler
 
 ```js
-const errorHandler = require('http-json-error-handler');
+const errorhandler = require('request-errorhandler');
 ```
 
 or GitHub
 
 ```bash
-$ git clone https://github.com/lfurnielis/http-json-error-handler.git
+$ git clone https://github.com/lfurnielis/request-errorhandler.git
 ```
 
 ## Guide
 
 ```js
-const errorHandler =  require('http-json-error-handler');
+const errorhandler =  require('request-errorhandler');
 const express = require('express');
 
 const app = express();
@@ -47,40 +47,39 @@ app.get('/foo', (req, res, next) => {
 });
 
 // HTTP error handler
-app.use(errorHandler({
-	stderr: true // Default: false
+app.use(errorhandler({
+  log: true // Default: false
+  debug: true // // Default: false
 }));
 ```
 
 ## Options
 
 ```js
-
 {
-  stderr: false // Log errors using console.error(), Default: false
-  stackerr: false // Log error.stack using console.debug() only for statusCode >= 500, Default: false
+  log: false; // Log errors using console.error(), Default: false
+  debug: false; // Log error.stack using console.debug() only for statusCode >= 500, Default: false
 }
-
 ```
 
 ### Definition of a "Error"
 
 The error could contain the following fields:
 
-| Error Key          | Purpose                                                                          |
-| ------------------ | -------------------------------------------------------------------------------- |
-| [message] | Error details.                                                                   |
-| [status]  | HTTP status code for response. Default: 500 (Internal Server Error). |
-| [code]    | Error code. Default: same as "status".                                  |
+| Error Key | Purpose                                                              |
+| --------- | -------------------------------------------------------------------- |
+| status_code  | HTTP status code for response. Default: 500 (Internal Server Error). |
+| message | Error details.                                                       |
+| code    | Error code.                               |
 
 ### HTTP JSON Error Example
 
 ```json
 {
   "error": {
-    "code": 10401,
-    "message": "BAD REQUEST",
-    "details": "Missing field(s): foo"
+    "status_code": 422,
+    "message": "Missing field(s): foo",
+    "details": "MISSING_REQUIRED_FIELDS"
   }
 }
 ```

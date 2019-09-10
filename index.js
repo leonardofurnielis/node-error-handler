@@ -5,31 +5,31 @@ const status = require('./lib/http-messages');
 const logger = require('./hooks/logger');
 
 module.exports = (options = {}) => {
-  const stderr = options.stderr || false;
-  const stackerr = options.stackerr || false;
+  const debug = options.debug || false;
+  const log = options.log || false;
 
   // eslint-disable-next-line no-unused-vars
   return (err, req, res, next) => {
-    const statusCode = statusCodeValidator(err.status) || 500;
-    const code = err.code || statusCode;
+    const statusCode = statusCodeValidator(err.code) || 500;
+    const code = statusCode;
 
     const errorHandler = {
       error: {
-        code,
-        message: status[statusCode],
-        details: err.message,
+        status_code: code,
+        message: err.message,
+        code: status[statusCode],
       },
     };
 
     if (!err.message || err.message === '') {
-      delete errorHandler.error.details;
+      delete errorHandler.error.message;
     }
 
-    if (stderr) {
+    if (log) {
       logger.error(errorHandler);
     }
 
-    if (stackerr && statusCode >= 500) {
+    if (debug) {
       logger.debug(err.stack);
     }
 
