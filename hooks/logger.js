@@ -20,7 +20,7 @@ log4js.configure({
   },
 });
 
-const logger = log4js.getLogger('http-json-error-handler');
+const logger = log4js.getLogger('request-json-errorhandler');
 logger.level = 'debug';
 
 module.exports = logger;
