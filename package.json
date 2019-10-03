@@ -17,25 +17,25 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leofur1/request-json-errorhandler.git"
+    "url": "git+https://github.com/leonardofurnielis/request-json-errorhandler.git"
   },
   "bugs": {
-    "url": "https://github.com/leofur1/request-json-errorhandler/issues"
+    "url": "https://github.com/leonardofurnielis/request-json-errorhandler/issues"
   },
   "homepage": "https://github.com/leofur1/request-json-errorhandler#readme",
   "author": "Leonardo Furnielis <leonardo.furnielis1@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "coveralls": "3.0.6",
-    "eslint": "6.3.0",
+    "eslint": "6.5.1",
     "eslint-config-airbnb": "18.0.1",
-    "eslint-config-prettier": "6.2.0",
+    "eslint-config-prettier": "6.3.0",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jsx-a11y": "6.2.3",
-    "eslint-plugin-prettier": "3.1.0",
-    "eslint-plugin-react": "7.14.3",
+    "eslint-plugin-prettier": "3.1.1",
+    "eslint-plugin-react": "7.15.1",
     "jest": "24.9.0",
-    "node-mocks-http": "1.7.6",
+    "node-mocks-http": "1.8.0",
     "prettier": "1.18.2"
   },
   "dependencies": {
