@@ -1,10 +1,10 @@
 # request-json-errorhandler
 
 ![npm](https://img.shields.io/npm/v/request-json-errorhandler)
-[![Build Status](https://travis-ci.org/lfurnielis/request-json-errorhandler.svg?branch=master)](https://travis-ci.org/lfurnielis/request-json-errorhandler)
-![GitHub](https://img.shields.io/github/license/lfurnielis/request-json-errorhandler.svg)
+[![Build Status](https://travis-ci.org/leonardofurnielis/request-json-errorhandler.svg?branch=master)](https://travis-ci.org/leonardofurnielis/request-json-errorhandler)
+![GitHub](https://img.shields.io/github/license/leonardofurnielis/request-json-errorhandler.svg)
 ![npm](https://img.shields.io/npm/dm/request-json-errorhandler.svg)
-[![Coverage Status](https://coveralls.io/repos/github/lfurnielis/request-json-errorhandler/badge.svg?branch=master)](https://coveralls.io/github/lfurnielis/request-json-errorhandler?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/leonardofurnielis/request-json-errorhandler/badge.svg?branch=master)](https://coveralls.io/github/leonardofurnielis/request-json-errorhandler?branch=master)
 
 ## Installation
 
@@ -23,7 +23,7 @@ const errorhandler = require('request-json-errorhandler');
 or GitHub
 
 ```bash
-$ git clone https://github.com/lfurnielis/request-json-errorhandler.git
+$ git clone https://github.com/leonardofurnielis/request-json-errorhandler.git
 ```
 
 ## Guide
