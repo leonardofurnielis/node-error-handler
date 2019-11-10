@@ -1,5 +1,6 @@
 .DS_Store
 .git
+.coveralls.yml
 /.vscode
 /node_modules
 /coverage
