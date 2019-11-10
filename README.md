@@ -1,29 +1,29 @@
-# request-json-errorhandler
+# octopus-error-handler
 
-![npm](https://img.shields.io/npm/v/request-json-errorhandler)
-[![Build Status](https://travis-ci.org/leonardofurnielis/request-json-errorhandler.svg?branch=master)](https://travis-ci.org/leonardofurnielis/request-json-errorhandler)
-![GitHub](https://img.shields.io/github/license/leonardofurnielis/request-json-errorhandler.svg)
-![npm](https://img.shields.io/npm/dm/request-json-errorhandler.svg)
-[![Coverage Status](https://coveralls.io/repos/github/leonardofurnielis/request-json-errorhandler/badge.svg?branch=master)](https://coveralls.io/github/leonardofurnielis/request-json-errorhandler?branch=master)
+![npm](https://img.shields.io/npm/v/octopus-error-handler)
+[![Build Status](https://travis-ci.org/leonardofurnielis/octopus-error-handler.svg?branch=master)](https://travis-ci.org/leonardofurnielis/octopus-error-handler)
+![GitHub](https://img.shields.io/github/license/leonardofurnielis/octopus-error-handler.svg)
+![npm](https://img.shields.io/npm/dm/octopus-error-handler.svg)
+[![Coverage Status](https://coveralls.io/repos/github/leonardofurnielis/octopus-error-handler/badge.svg?branch=master)](https://coveralls.io/github/leonardofurnielis/octopus-error-handler?branch=master)
 
 ## Installation
 
-You can download `request-json-errorhandler` from NPM
+You can download `octopus-error-handler` from NPM
 
 ```bash
-$ npm install request-json-errorhandler --save
+$ npm install octopus-error-handler --save
 ```
 
-then in your project require request-json-errorhandler
+then in your project require octopus-error-handler
 
 ```js
-const errorhandler = require('request-json-errorhandler');
+const errorHandler = require('octopus-error-handler');
 ```
 
 or GitHub
 
 ```bash
-$ git clone https://github.com/leonardofurnielis/request-json-errorhandler.git
+$ git clone https://github.com/leonardofurnielis/octopus-error-handler.git
 ```
 
 ## Guide
@@ -32,7 +32,7 @@ In an Express-based application:
 
 ```js
 const express = require('express');
-const errorhandler =  require('request-json-errorhandler');
+const errorHandler =  require('octopus-error-handler');
 
 const app = express();
 
@@ -46,8 +46,8 @@ app.get('/foo', (req, res, next) => {
     next(error);
 });
 
-// HTTP errorhandler
-app.use(errorhandler({
+// HTTP errorHandler
+app.use(errorHandler({
   log: true, 
   debug: true 
 }));
@@ -58,7 +58,7 @@ app.use(errorhandler({
 ```js
 {
   log: false; // Log errors using console.error(), Default: false
-  debug: false; // Log error.stack using console.debug(), Default: false
+  debug: false; // Adds error.stack into output JSON, Default: false
 }
 ```
 

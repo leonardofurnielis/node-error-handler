@@ -1,8 +1,10 @@
+/* eslint-disable no-underscore-dangle */
+
 'use strict';
 
 const httpMocks = require('node-mocks-http');
 
-const errorhandler = require('../index');
+const errorHandler = require('../index');
 
 describe('HTTP Handler an JSON error', () => {
   test('Should return default error when no args passed', async () => {
@@ -10,11 +12,11 @@ describe('HTTP Handler an JSON error', () => {
     const res = httpMocks.createResponse();
     const error = new Error();
 
-    errorhandler()(error, req, res, {});
+    errorHandler()(error, req, res, {});
 
     const response = JSON.parse(res._getData());
 
-    expect(response.error.code).toEqual('INTERNAL SERVER ERROR');
+    expect(response.error.code).toEqual('INTERNAL_SERVER_ERROR');
     expect(response.error.status_code).toEqual(500);
   });
 
@@ -24,11 +26,11 @@ describe('HTTP Handler an JSON error', () => {
     const error = new Error();
     error.code = 400;
 
-    errorhandler()(error, req, res, {});
+    errorHandler()(error, req, res, {});
 
     const response = JSON.parse(res._getData());
 
-    expect(response.error.code).toEqual('BAD REQUEST');
+    expect(response.error.code).toEqual('BAD_REQUEST');
     expect(response.error.status_code).toEqual(400);
   });
 
@@ -38,10 +40,10 @@ describe('HTTP Handler an JSON error', () => {
     const error = new Error('Missing fields: [name]');
     error.code = 400;
 
-    errorhandler()(error, req, res, {});
+    errorHandler()(error, req, res, {});
 
     const response = JSON.parse(res._getData());
-    expect(response.error.code).toEqual('BAD REQUEST');
+    expect(response.error.code).toEqual('BAD_REQUEST');
     expect(response.error.message).toEqual('Missing fields: [name]');
     expect(response.error.status_code).toEqual(400);
   });
@@ -52,10 +54,10 @@ describe('HTTP Handler an JSON error', () => {
     const error = new Error();
     error.code = 400;
 
-    errorhandler({ log: true })(error, req, res, {});
+    errorHandler({ log: true })(error, req, res, {});
 
     const response = JSON.parse(res._getData());
-    expect(response.error.code).toEqual('BAD REQUEST');
+    expect(response.error.code).toEqual('BAD_REQUEST');
     expect(response.error.status_code).toEqual(400);
   });
 
@@ -65,10 +67,10 @@ describe('HTTP Handler an JSON error', () => {
     const error = new Error();
     error.code = 500;
 
-    errorhandler({ debug: true })(error, req, res, {});
+    errorHandler({ debug: true })(error, req, res, {});
 
     const response = JSON.parse(res._getData());
-    expect(response.error.code).toEqual('INTERNAL SERVER ERROR');
+    expect(response.error.code).toEqual('INTERNAL_SERVER_ERROR');
     expect(response.error.status_code).toEqual(500);
   });
 });

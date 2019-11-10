@@ -1,8 +1,8 @@
 'use strcit';
 
 const statusCodeValidator = require('./lib/status-code-validator');
-const status = require('./lib/http-messages');
-const logger = require('./hooks/logger');
+const status = require('./lib/data-builder');
+const logger = require('./lib/logger');
 
 module.exports = (options = {}) => {
   const debug = options.debug || false;
@@ -16,21 +16,20 @@ module.exports = (options = {}) => {
     const errorHandler = {
       error: {
         status_code: code,
-        message: err.message,
         code: status[statusCode],
       },
     };
 
-    if (!err.message || err.message === '') {
-      delete errorHandler.error.message;
+    if (err.message && err.message !== '') {
+      errorHandler.error.message = err.message;
+    }
+
+    if (debug) {
+      errorHandler.error.stack = err.stack;
     }
 
     if (log) {
       logger.error(errorHandler);
-    }
-
-    if (debug) {
-      logger.debug(err.stack);
     }
 
     return res.status(statusCode).json(errorHandler);
