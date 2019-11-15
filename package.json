@@ -1,6 +1,6 @@
 {
-  "name": "octopus-error-handler",
-  "version": "1.0.3",
+  "name": "node-error-handler",
+  "version": "1.0.4",
   "description": "Express error handlers for JSON APIs in development and production environments",
   "main": "index.js",
   "scripts": {
@@ -11,18 +11,17 @@
     "express",
     "error",
     "handler",
-    "request",
     "json",
-    "octopus-error-handler"
+    "node"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leonardofurnielis/octopus-error-handler.git"
+    "url": "git+https://github.com/leonardofurnielis/node-error-handler.git"
   },
   "bugs": {
-    "url": "https://github.com/leonardofurnielis/octopus-error-handler/issues"
+    "url": "https://github.com/leonardofurnielis/node-error-handler/issues"
   },
-  "homepage": "https://github.com/leonardofurnielis/octopus-error-handler#readme",
+  "homepage": "https://github.com/leonardofurnielis/node-error-handler#readme",
   "author": "Leonardo Furnielis <leonardofurnielis@outlook.com>",
   "license": "MIT",
   "devDependencies": {
@@ -39,6 +38,6 @@
     "prettier": "1.19.1"
   },
   "dependencies": {
-    "log4js": "5.3.0"
+    "log4js": "6.0.0"
   }
 }

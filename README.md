@@ -1,29 +1,29 @@
-# octopus-error-handler
+# node-error-handler
 
-![npm](https://img.shields.io/npm/v/octopus-error-handler)
-[![Build Status](https://travis-ci.org/leonardofurnielis/octopus-error-handler.svg?branch=master)](https://travis-ci.org/leonardofurnielis/octopus-error-handler)
-![GitHub](https://img.shields.io/github/license/leonardofurnielis/octopus-error-handler.svg)
-![npm](https://img.shields.io/npm/dm/octopus-error-handler.svg)
-[![Coverage Status](https://coveralls.io/repos/github/leonardofurnielis/octopus-error-handler/badge.svg?branch=master)](https://coveralls.io/github/leonardofurnielis/octopus-error-handler?branch=master)
+![npm](https://img.shields.io/npm/v/node-error-handler)
+[![Build Status](https://travis-ci.org/leonardofurnielis/node-error-handler.svg?branch=master)](https://travis-ci.org/leonardofurnielis/node-error-handler)
+![GitHub](https://img.shields.io/github/license/leonardofurnielis/node-error-handler.svg)
+![npm](https://img.shields.io/npm/dm/node-error-handler.svg)
+[![Coverage Status](https://coveralls.io/repos/github/leonardofurnielis/node-error-handler/badge.svg?branch=master)](https://coveralls.io/github/leonardofurnielis/node-error-handler?branch=master)
 
 ## Installation
 
-You can download `octopus-error-handler` from NPM
+You can download `node-error-handler` from NPM
 
 ```bash
-$ npm install octopus-error-handler --save
+$ npm install node-error-handler --save
 ```
 
-then in your project require octopus-error-handler
+then in your project require node-error-handler
 
 ```js
-const errorHandler = require('octopus-error-handler');
+const errorHandler = require('node-error-handler');
 ```
 
 or GitHub
 
 ```bash
-$ git clone https://github.com/leonardofurnielis/octopus-error-handler.git
+$ git clone https://github.com/leonardofurnielis/node-error-handler.git
 ```
 
 ## Guide
@@ -32,7 +32,7 @@ In an Express-based application:
 
 ```js
 const express = require('express');
-const errorHandler =  require('octopus-error-handler');
+const errorHandler =  require('node-error-handler');
 
 const app = express();
 
