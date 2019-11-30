@@ -25,19 +25,19 @@
   "author": "Leonardo Furnielis <leonardofurnielis@outlook.com>",
   "license": "MIT",
   "devDependencies": {
-    "coveralls": "3.0.7",
-    "eslint": "6.6.0",
+    "coveralls": "3.0.9",
+    "eslint": "6.7.1",
     "eslint-config-airbnb": "18.0.1",
-    "eslint-config-prettier": "6.5.0",
+    "eslint-config-prettier": "6.7.0",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-prettier": "3.1.1",
-    "eslint-plugin-react": "7.16.0",
+    "eslint-plugin-react": "7.17.0",
     "jest": "24.9.0",
     "node-mocks-http": "1.8.0",
     "prettier": "1.19.1"
   },
   "dependencies": {
-    "log4js": "6.0.0"
+    "log4js": "6.1.0"
   }
 }
