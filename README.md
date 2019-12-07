@@ -20,12 +20,6 @@ then in your project require node-error-handler
 const errorHandler = require('node-error-handler');
 ```
 
-or GitHub
-
-```bash
-$ git clone https://github.com/leonardofurnielis/node-error-handler.git
-```
-
 ## Guide
 
 In an Express-based application:
