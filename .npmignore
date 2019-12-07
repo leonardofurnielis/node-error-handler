@@ -1,6 +1,7 @@
 .DS_Store
 .git
 .coveralls.yml
+package-lock.json
 /.vscode
 /node_modules
 /coverage

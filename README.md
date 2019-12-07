@@ -14,7 +14,7 @@ You can download `node-error-handler` from NPM
 $ npm install node-error-handler --save
 ```
 
-then in your project require node-error-handler
+then in your project require `node-error-handler`
 
 ```js
 const errorHandler = require('node-error-handler');
