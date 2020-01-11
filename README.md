@@ -12,9 +12,7 @@
 
 
 ```bash
-
 $ npm install node-error-handler --save
-
 ```
   
 ## Use
@@ -70,7 +68,7 @@ The error could contain the following fields:
 ```js
 app.use(errorHandler({ log: errorStorage }));
 
-function errorStorage (err, req) {
+function errorStorage (err, obj, req) {
    // Do some stuff
 }
 ```
