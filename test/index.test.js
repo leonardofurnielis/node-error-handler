@@ -17,7 +17,7 @@ describe('HTTP Handler an JSON error', () => {
     const response = JSON.parse(res._getData());
 
     expect(response.error.code).toEqual('INTERNAL_SERVER_ERROR');
-    expect(response.error.status_code).toEqual(500);
+    expect(response.error.statusCode).toEqual(500);
   });
 
   test('Should return error code 400', async () => {
@@ -31,7 +31,7 @@ describe('HTTP Handler an JSON error', () => {
     const response = JSON.parse(res._getData());
 
     expect(response.error.code).toEqual('BAD_REQUEST');
-    expect(response.error.status_code).toEqual(400);
+    expect(response.error.statusCode).toEqual(400);
   });
 
   test('Should return error code 400 with message', async () => {
@@ -45,10 +45,10 @@ describe('HTTP Handler an JSON error', () => {
     const response = JSON.parse(res._getData());
     expect(response.error.code).toEqual('BAD_REQUEST');
     expect(response.error.message).toEqual('Missing fields: [name]');
-    expect(response.error.status_code).toEqual(400);
+    expect(response.error.statusCode).toEqual(400);
   });
 
-  test('Should log error in logger.error', async () => {
+  test('Should print error via console.error', async () => {
     const req = httpMocks.createRequest();
     const res = httpMocks.createResponse();
     const error = new Error();
@@ -58,10 +58,10 @@ describe('HTTP Handler an JSON error', () => {
 
     const response = JSON.parse(res._getData());
     expect(response.error.code).toEqual('BAD_REQUEST');
-    expect(response.error.status_code).toEqual(400);
+    expect(response.error.statusCode).toEqual(400);
   });
 
-  test('Should log error in logger.debug', async () => {
+  test('Should returns full error stack traces', async () => {
     const req = httpMocks.createRequest();
     const res = httpMocks.createResponse();
     const error = new Error();
@@ -71,6 +71,24 @@ describe('HTTP Handler an JSON error', () => {
 
     const response = JSON.parse(res._getData());
     expect(response.error.code).toEqual('INTERNAL_SERVER_ERROR');
-    expect(response.error.status_code).toEqual(500);
+    expect(response.error.statusCode).toEqual(500);
+  });
+
+  test('Should use custom log function', async () => {
+    const req = httpMocks.createRequest();
+    const res = httpMocks.createResponse();
+    const error = new Error();
+    error.code = 500;
+
+    errorHandler({
+      log: err => {
+        err.error.message = 'My custom log function';
+      },
+    })(error, req, res, {});
+
+    const response = JSON.parse(res._getData());
+    expect(response.error.message).toEqual('My custom log function');
+    expect(response.error.code).toEqual('INTERNAL_SERVER_ERROR');
+    expect(response.error.statusCode).toEqual(500);
   });
 });
