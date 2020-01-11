@@ -81,8 +81,8 @@ describe('HTTP Handler an JSON error', () => {
     error.code = 500;
 
     errorHandler({
-      log: err => {
-        err.error.message = 'My custom log function';
+      log: (err, obj) => {
+        obj.error.message = 'My custom log function';
       },
     })(error, req, res, {});
 
