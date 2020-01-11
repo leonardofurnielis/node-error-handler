@@ -39,7 +39,7 @@ module.exports = (options = {}) => {
     }
 
     if (log && typeof log === 'function') {
-      log(errorHandler, req);
+      log(err, errorHandler, req);
     }
 
     return res.status(statusCode).json(errorHandler);
