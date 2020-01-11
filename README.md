@@ -38,7 +38,6 @@ next(error);
 });
 
 // HTTP errorHandler
-
 app.use(errorHandler({ log: true, debug: true }));
 
 ```
