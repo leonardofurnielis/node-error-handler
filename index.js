@@ -1,3 +1,9 @@
+/*!
+ * node-error-handler
+ * Copyright(c) 2019-2020 Leonardo Furnielis.
+ * MIT Licensed
+ */
+
 'use strcit';
 
 const statusCodeValidator = require('./lib/status-code-validator');
@@ -15,7 +21,7 @@ module.exports = (options = {}) => {
 
     const errorHandler = {
       error: {
-        status_code: code,
+        statusCode: code,
         code: status[statusCode],
       },
     };
@@ -28,8 +34,12 @@ module.exports = (options = {}) => {
       errorHandler.error.stack = err.stack;
     }
 
-    if (log) {
+    if (log && typeof log === 'boolean') {
       logger.error(errorHandler);
+    }
+
+    if (log && typeof log === 'function') {
+      log(err, errorHandler, req);
     }
 
     return res.status(statusCode).json(errorHandler);
