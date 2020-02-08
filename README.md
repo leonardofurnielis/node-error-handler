@@ -46,7 +46,7 @@ app.use(errorHandler({ log: true, debug: true }));
   
 | Option | Type | Default | Description  |
 | ------ |------|---------| ------------ |
-| log | Boolean \| Function | `false`| If `true` all errors are printed via console.error. If `function` use custom fuction defined by user. |
+| log | Boolean \| Array<Function> | `false`| If `true` all errors are printed via console.error. If `function` use custom fuction defined by user. |
 | debug| Boolean | `false` | If `true` responses include stack trace into output. |
   
 
@@ -66,7 +66,7 @@ The error could contain the following fields:
 ### Customizing log
 
 ```js
-app.use(errorHandler({ log: errorStorage }));
+app.use(errorHandler({ log: [errorStorage] }));
 
 function errorStorage (err, obj, req) {
    // Do some stuff
