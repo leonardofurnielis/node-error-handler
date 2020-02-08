@@ -1,0 +1,25 @@
+'use strict';
+
+const validator = require('../lib/validator');
+
+describe('isHttpStatusCode validator', () => {
+  test('Should return undefined, using not valid http code', () => {
+    expect(validator.isHttpStatusCode(600)).toEqual(undefined);
+  });
+
+  test('Should return 200 when send err.code 200', () => {
+    expect(validator.isHttpStatusCode(200)).toEqual(200);
+  });
+});
+
+describe('isArrayOfFunctions Validator', () => {
+  test('Should return error when params is not an array', () => {
+    expect(validator.isArrayOfFunctions).toThrow(TypeError);
+  });
+
+  test('Should return error when params is not an array', () => {
+    expect(() => {
+      validator.isArrayOfFunctions([123]);
+    }).toThrow(TypeError);
+  });
+});

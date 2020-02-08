@@ -1,12 +1,12 @@
-/*!
+/*
  * node-error-handler
- * Copyright(c) 2019-2020 Leonardo Furnielis.
- * MIT Licensed
+ * Copyright 2019-2020 Leonardo Furnielis.
+ * Licensed under MIT License
  */
 
 'use strcit';
 
-const statusCodeValidator = require('./lib/status-code-validator');
+const validator = require('./lib/validator');
 const status = require('./lib/data-builder');
 const logger = require('./lib/logger');
 
@@ -16,7 +16,7 @@ module.exports = (options = {}) => {
 
   // eslint-disable-next-line no-unused-vars
   return (err, req, res, next) => {
-    const statusCode = statusCodeValidator(err.code) || 500;
+    const statusCode = validator.isHttpStatusCode(err.code) || 500;
     const code = statusCode;
 
     const errorHandler = {
@@ -36,10 +36,12 @@ module.exports = (options = {}) => {
 
     if (log && typeof log === 'boolean') {
       logger.error(errorHandler);
-    }
+    } else if (log) {
+      validator.isArrayOfFunctions(log);
 
-    if (log && typeof log === 'function') {
-      log(err, errorHandler, req);
+      log.forEach(element => {
+        element(err, errorHandler, req);
+      });
     }
 
     return res.status(statusCode).json(errorHandler);
