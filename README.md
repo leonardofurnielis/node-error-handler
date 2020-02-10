@@ -66,7 +66,7 @@ The error could contain the following fields:
 ### Customizing log
 
 ```js
-app.use(errorHandler({ log: [errorStorage] }));
+app.use(errorHandler({ log: errorStorage }));
 
 function errorStorage (err, obj, req) {
    // Do some stuff
