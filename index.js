@@ -13,6 +13,7 @@ const logger = require('./lib/logger');
 module.exports = (options = {}) => {
   const debug = options.debug || false;
   const log = options.log || false;
+  validator.isValidLog(log);
 
   // eslint-disable-next-line no-unused-vars
   return (err, req, res, next) => {
@@ -36,9 +37,9 @@ module.exports = (options = {}) => {
 
     if (log && typeof log === 'boolean') {
       logger.error(errorHandler);
-    } else if (log) {
-      validator.isArrayOfFunctions(log);
-
+    } else if (log && typeof log === 'function') {
+      log(err, errorHandler, req);
+    } else if (log && Array.isArray(log)) {
       log.forEach(element => {
         element(err, errorHandler, req);
       });

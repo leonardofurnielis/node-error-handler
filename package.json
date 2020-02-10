@@ -4,7 +4,7 @@
   "description": "Express error handlers for JSON APIs in development and production environments",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage --verbose"
   },
   "keywords": [
     "api",

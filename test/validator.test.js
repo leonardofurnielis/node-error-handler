@@ -12,14 +12,16 @@ describe('isHttpStatusCode validator', () => {
   });
 });
 
-describe('isArrayOfFunctions Validator', () => {
-  test('Should return error when params is not an array', () => {
-    expect(validator.isArrayOfFunctions).toThrow(TypeError);
+describe('isValidLog Validator', () => {
+  test('Should return error when params is not an array of functions', () => {
+    expect(() => {
+      validator.isValidLog([123]);
+    }).toThrow(TypeError);
   });
 
-  test('Should return error when params is not an array', () => {
+  test('Should return error when params is not function or boolean', () => {
     expect(() => {
-      validator.isArrayOfFunctions([123]);
+      validator.isValidLog('true');
     }).toThrow(TypeError);
   });
 });
