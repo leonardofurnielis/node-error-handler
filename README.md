@@ -6,7 +6,6 @@
 ![GitHub](https://img.shields.io/github/license/leonardofurnielis/node-error-handler.svg)
 ![npm](https://img.shields.io/npm/dm/node-error-handler.svg)
 [![codecov](https://codecov.io/gh/leonardofurnielis/node-error-handler/branch/master/graph/badge.svg)](https://codecov.io/gh/leonardofurnielis/node-error-handler)
-[![Coverage Status](https://coveralls.io/repos/github/leonardofurnielis/node-error-handler/badge.svg?branch=master)](https://coveralls.io/github/leonardofurnielis/node-error-handler?branch=master)
   
 
 ## Installation 
