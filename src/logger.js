@@ -26,7 +26,7 @@ log4js.configure({
   },
 });
 
-const logger = log4js.getLogger(' ');
+const logger = log4js.getLogger('::');
 logger.level = 'error';
 
 module.exports = logger;

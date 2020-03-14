@@ -1,6 +1,6 @@
 'use strict';
 
-const validator = require('../lib/validator');
+const validator = require('../src/validator');
 
 describe('isHttpStatusCode validator', () => {
   test('Should return undefined, using not valid http code', () => {

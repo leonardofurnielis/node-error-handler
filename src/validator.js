@@ -6,12 +6,12 @@
 
 'use strcit';
 
-const status = require('./data-builder');
+const dataBuilder = require('./data_builder');
 
 module.exports = {
   isHttpStatusCode: code => {
     code = Number(code);
-    if (status[code]) {
+    if (dataBuilder[code]) {
       return code;
     }
     return undefined;

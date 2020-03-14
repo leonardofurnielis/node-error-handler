@@ -6,9 +6,9 @@
 
 'use strcit';
 
-const validator = require('./lib/validator');
-const status = require('./lib/data-builder');
-const logger = require('./lib/logger');
+const dataBuilder = require('./src/data_builder');
+const logger = require('./src/logger');
+const validator = require('./src/validator');
 
 module.exports = (options = {}) => {
   const debug = options.debug || false;
@@ -23,7 +23,7 @@ module.exports = (options = {}) => {
     const errorHandler = {
       error: {
         statusCode: code,
-        code: status[statusCode],
+        code: dataBuilder[statusCode],
       },
     };
 
