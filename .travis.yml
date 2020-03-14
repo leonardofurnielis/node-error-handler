@@ -14,6 +14,7 @@ cache:
 
 install:
   - npm install -g codecov
+  - npm install -g jest
 
 script:
   - npm test && codecov
