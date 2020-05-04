@@ -40,7 +40,7 @@ module.exports = (options = {}) => {
     } else if (log && typeof log === 'function') {
       log(err, errorHandler, req);
     } else if (log && Array.isArray(log)) {
-      log.forEach(element => {
+      log.forEach((element) => {
         element(err, errorHandler, req);
       });
     }
