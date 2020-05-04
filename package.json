@@ -32,16 +32,16 @@
     "codecov": "3.6.5",
     "eslint": "6.8.0",
     "eslint-config-airbnb": "18.1.0",
-    "eslint-config-prettier": "6.10.1",
-    "eslint-plugin-import": "2.20.1",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-import": "2.20.2",
     "eslint-plugin-jsx-a11y": "6.2.3",
-    "eslint-plugin-prettier": "3.1.2",
+    "eslint-plugin-prettier": "3.1.3",
     "eslint-plugin-react": "7.19.0",
-    "jest": "25.1.0",
+    "jest": "25.5.4",
     "node-mocks-http": "1.8.1",
-    "prettier": "2.0.2"
+    "prettier": "2.0.5"
   },
   "dependencies": {
-    "log4js": "6.1.2"
+    "log4js": "6.2.1"
   }
 }
