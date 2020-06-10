@@ -42,6 +42,6 @@
     "prettier": "2.0.5"
   },
   "dependencies": {
-    "log4js": "6.2.1"
+    "log4js": "6.3.0"
   }
 }
