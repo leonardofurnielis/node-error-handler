@@ -46,22 +46,9 @@ app.use(errorHandler({ log: true, debug: true }));
   
 | Option | Type | Default | Description  |
 | ------ |------|---------| ------------ |
-| log | Boolean \| Function \| Array\<Function\> | `false`| If `true` all errors are printed via console.error. If `function` use custom fuction defined by user. |
+| log | Boolean \| Function | `false`| If `true` all errors are printed via console.error. If `function` use custom fuction defined by user. |
 | debug| Boolean | `false` | If `true` responses include stack trace into output. |
   
-
-### Definition of a "Error"
-
-  
-The error could contain the following fields:
-
-|  Error Key  |  Purpose  |
-| --------- | -------------------------------------------------------------------- |
-| statusCode | HTTP status code for response. Default value: `500` (Internal Server Error). |
-| message | Error message. |
-| code | Error code. |
-| stack | Error stack trace including data such as file paths, URLs. |
-
 
 ### Customizing log
 
@@ -99,6 +86,19 @@ function errorStorage (err, obj, req) {
     } 
 }
 ```
+
+### Definition of a "Error"
+
+  
+The error could contain the following fields:
+
+|  Error Key  |  Purpose  |
+| --------- | -------------------------------------------------------------------- |
+| statusCode | HTTP status code for response. Default value: `500` (Internal Server Error). |
+| message | Error message. |
+| code | Error code. |
+| stack | Error stack trace including data such as file paths, URLs. |
+
 
 ## License
 

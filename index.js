@@ -39,10 +39,6 @@ module.exports = (options = {}) => {
       logger.error(errorHandler);
     } else if (log && typeof log === 'function') {
       log(err, errorHandler, req);
-    } else if (log && Array.isArray(log)) {
-      log.forEach((element) => {
-        element(err, errorHandler, req);
-      });
     }
 
     return res.status(statusCode).json(errorHandler);
