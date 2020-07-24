@@ -14,6 +14,7 @@
 ```bash
 $ npm install node-error-handler --save
 ```
+
   
 ## Use
 
@@ -52,6 +53,7 @@ app.use(errorHandler({ log: true, debug: true }));
 
 ### Customizing log
 
+
 ```js
 app.use(errorHandler({ log: errorStorage }));
 
@@ -86,6 +88,7 @@ function errorStorage (err, obj, req) {
     } 
 }
 ```
+
 
 ### Definition of a "Error"
 
