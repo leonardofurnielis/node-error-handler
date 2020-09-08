@@ -30,16 +30,16 @@
   "license": "MIT",
   "devDependencies": {
     "codecov": "3.7.2",
-    "eslint": "7.5.0",
+    "eslint": "7.8.1",
     "eslint-config-airbnb": "18.2.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-import": "2.22.0",
     "eslint-plugin-jsx-a11y": "6.3.1",
     "eslint-plugin-prettier": "3.1.4",
-    "eslint-plugin-react": "7.20.3",
-    "jest": "26.1.0",
-    "node-mocks-http": "1.8.1",
-    "prettier": "2.0.5"
+    "eslint-plugin-react": "7.20.6",
+    "jest": "26.4.2",
+    "node-mocks-http": "1.9.0",
+    "prettier": "2.1.1"
   },
   "dependencies": {
     "log4js": "6.3.0"
