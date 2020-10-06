@@ -6,41 +6,41 @@
 
 'use strcit';
 
-const dataBuilder = require('./src/data_builder');
-const logger = require('./src/logger');
-const validator = require('./src/validator');
+const data_builder = require('./lib/data-builder');
+const logger = require('./lib/logger');
+const validator = require('./lib/validator');
 
 module.exports = (options = {}) => {
   const debug = options.debug || false;
   const log = options.log || false;
-  validator.isValidLog(log);
+  validator.is_valid_log(log);
 
   // eslint-disable-next-line no-unused-vars
   return (err, req, res, next) => {
-    const statusCode = validator.isHttpStatusCode(err.code) || 500;
-    const code = statusCode;
+    const status_code = validator.is_http_status_code(err.code) || 500;
+    const code = status_code;
 
-    const errorHandler = {
+    const error_handler = {
       error: {
-        statusCode: code,
-        code: dataBuilder[statusCode],
+        status_code: code,
+        code: data_builder[status_code],
       },
     };
 
     if (err.message && err.message !== '') {
-      errorHandler.error.message = err.message;
+      error_handler.error.message = err.message;
     }
 
     if (debug) {
-      errorHandler.error.stack = err.stack;
+      error_handler.error.stack = err.stack;
     }
 
     if (log && typeof log === 'boolean') {
-      logger.error(errorHandler);
+      logger.error(error_handler);
     } else if (log && typeof log === 'function') {
-      log(err, errorHandler, req);
+      log(err, error_handler, req);
     }
 
-    return res.status(statusCode).json(errorHandler);
+    return res.status(status_code).json(error_handler);
   };
 };
