@@ -31,9 +31,9 @@ const  app = express();
 // Setup your middlewares
 // Setup your routes
 app.get('/foo', (req, res, next) => {
-const  error = new  Error('Missing field(s): foo');
-error.code = 422;
-next(error);
+  const  error = new  Error('Missing field(s): foo');
+  error.code = 422;
+  next(error);
 });
 
 // HTTP error_handler
