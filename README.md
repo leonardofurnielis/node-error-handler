@@ -19,7 +19,7 @@ $ npm install node-error-handler --save
 ## Use
 
 
-In an Express-based application:
+In an express(https://www.npmjs.com/package/express)-based application:
 
 ```js
 
