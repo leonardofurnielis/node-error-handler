@@ -24,7 +24,7 @@ In an Express-based application:
 ```js
 
 const  express = require('express');
-const  errorHandler = require('node-error-handler');
+const  error_handler = require('node-error-handler');
   
 const  app = express();
 
@@ -36,8 +36,8 @@ error.code = 422;
 next(error);
 });
 
-// HTTP errorHandler
-app.use(errorHandler({ log: true, debug: true }));
+// HTTP error_handler
+app.use(error_handler({ log: true, debug: true }));
 
 ```
 
@@ -55,9 +55,9 @@ app.use(errorHandler({ log: true, debug: true }));
 
 
 ```js
-app.use(errorHandler({ log: errorStorage }));
+app.use(error_handler({ log: error_storage }));
 
-function errorStorage (err, obj, req) {
+function error_storage (err, obj, req) {
    // Do some stuff
 }
 ```
@@ -69,14 +69,14 @@ function errorStorage (err, obj, req) {
 5xx error  `debug: false`:
 
 ```
-{ "error": { "statusCode": 500,"code": "INTERNAL_SERVER_ERROR" } }
+{ "error": { "status_code": 500,"code": "INTERNAL_SERVER_ERROR" } }
 ```
 
 5xx error  `debug: true`:
 
 ```
 { "error": 
-  { "statusCode": 500,
+  { "status_code": 500,
     "code": "INTERNAL_SERVER_ERROR",
     "stack":   
     at Module._compile (internal/modules/cjs/loader.js:892:18)
@@ -97,7 +97,7 @@ The error could contain the following fields:
 
 |  Error Key  |  Purpose  |
 | --------- | -------------------------------------------------------------------- |
-| statusCode | HTTP status code for response. Default value: `500` (Internal Server Error). |
+| status_code | HTTP status code for response. Default value: `500` (Internal Server Error). |
 | message | Error message. |
 | code | Error code. |
 | stack | Error stack trace including data such as file paths, URLs. |
