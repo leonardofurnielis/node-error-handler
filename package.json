@@ -4,6 +4,7 @@
   "description": "Express error handlers for JSON APIs in development and production environments",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint **/*.js",
     "test": "jest --coverage --verbose"
   },
   "jest": {
