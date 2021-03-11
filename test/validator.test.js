@@ -2,20 +2,20 @@
 
 const validator = require('../lib/validator');
 
-describe('is HTTP StatusCode', () => {
+describe('isHTTPCode()', () => {
   test('When sent not valid code, should return undefined', () => {
-    expect(validator.isHTTPStatusCode(600)).toBeUndefined();
+    expect(validator.isHTTPCode(600)).toBeUndefined();
   });
 
   test('When code=200, should return 200', () => {
-    expect(validator.isHTTPStatusCode(200)).toEqual(200);
+    expect(validator.isHTTPCode(200)).toEqual(200);
   });
 });
 
-describe('is Valid Log', () => {
+describe('isLog()', () => {
   test('When params is not function or boolean, should return error', () => {
     expect(() => {
-      validator.isValidLog('true');
+      validator.isLog('true');
     }).toThrow(TypeError);
   });
 });

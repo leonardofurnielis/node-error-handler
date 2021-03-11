@@ -4,8 +4,9 @@
   "description": "Express error handlers for JSON APIs in development and production environments",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint",
-    "test": "jest --coverage --verbose"
+    "lint": "eslint .",
+    "test": "npm run lint && jest --coverage --verbose",
+    "precommit": "pretty-quick --staged"
   },
   "jest": {
     "coverageDirectory": "./coverage/",
@@ -16,6 +17,7 @@
     "express",
     "error",
     "handler",
+    "error-handler",
     "json",
     "node"
   ],
@@ -32,16 +34,13 @@
   "devDependencies": {
     "codecov": "3.8.1",
     "eslint": "7.21.0",
-    "eslint-config-airbnb": "18.2.1",
     "eslint-config-prettier": "8.1.0",
-    "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jest": "24.2.1",
-    "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-prettier": "3.3.1",
-    "eslint-plugin-react": "7.22.0",
     "jest": "26.6.3",
     "node-mocks-http": "1.10.1",
-    "prettier": "2.2.1"
+    "prettier": "2.2.1",
+    "pretty-quick": "3.1.0"
   },
   "dependencies": {
     "log4js": "6.3.0"

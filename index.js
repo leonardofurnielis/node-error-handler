@@ -14,11 +14,11 @@ module.exports = (options = {}) => {
   const debug = options.debug || false;
   const log = options.log || false;
   // const camelCase = options.camel_case || false;
-  validator.isValidLog(log);
+  validator.isLog(log);
 
   // eslint-disable-next-line no-unused-vars
   return (err, req, res, next) => {
-    const statusCode = validator.isHTTPStatusCode(err.code) || 500;
+    const statusCode = validator.isHTTPCode(err.code) || 500;
     const code = statusCode;
 
     const errorHandler = {
