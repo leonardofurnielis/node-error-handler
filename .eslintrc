@@ -17,6 +17,7 @@
   "globals": {},
   "rules": {
     "prettier/prettier": ["error"],
+    "no-underscore-dangle": ["error"],
     "no-use-before-define": ["error", { "functions": false }],
     "no-async-promise-executor": "off",
     "no-param-reassign": "off",
