@@ -24,7 +24,7 @@ In an [express](https://www.npmjs.com/package/express) based application:
 ```js
 
 const  express = require('express');
-const  error_handler = require('node-error-handler');
+const  errorHandler = require('node-error-handler');
   
 const  app = express();
 
@@ -36,8 +36,8 @@ app.get('/foo', (req, res, next) => {
   next(error);
 });
 
-// HTTP error_handler
-app.use(error_handler({ log: true, debug: true }));
+// HTTP errorHandler
+app.use(errorHandler({ log: true, debug: true, camel_case: true }));
 
 ```
 
@@ -47,17 +47,18 @@ app.use(error_handler({ log: true, debug: true }));
   
 | Option | Type | Default | Description  |
 | ------ |------|---------| ------------ |
-| log | Boolean \| Function | `false`| If `true` all errors are printed via console.error. If `function` use custom fuction defined by user. |
-| debug| Boolean | `false` | If `true` responses include stack trace into output. |
+| log | Boolean \| Function | `false`| If `true` all errors are printed with stderr. If `function` use custom fuction defined by user. |
+| debug| Boolean | `false` | If `true` the stack trace is attached to output. |
+| camel_case | Boolean | false | If `true` The camelCase approach is used by error handler. |
   
 
 ### Customizing log
 
 
 ```js
-app.use(error_handler({ log: error_storage }));
+app.use(errorHandler({ log: saveErrorLogs }));
 
-function error_storage (err, obj, req) {
+function saveErrorLogs (err, obj, req) {
    // Do some stuff
 }
 ```
@@ -65,6 +66,17 @@ function error_storage (err, obj, req) {
 
 ## Example
 
+5xx error  `camel_case: false`:
+
+```
+{ "error": { "status_code": 500,"code": "INTERNAL_SERVER_ERROR" } }
+```
+
+5xx error  `camel_case: true`:
+
+```
+{ "error": { "statusCode": 500,"code": "INTERNAL_SERVER_ERROR" } }
+```
 
 5xx error  `debug: false`:
 
