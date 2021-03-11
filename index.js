@@ -13,7 +13,8 @@ const validator = require('./lib/validator');
 module.exports = (options = {}) => {
   const debug = options.debug || false;
   const log = options.log || false;
-  // const camelCase = options.camel_case || false;
+  const camelCase = options.camel_case || false;
+
   validator.isLog(log);
 
   // eslint-disable-next-line no-unused-vars
@@ -23,10 +24,15 @@ module.exports = (options = {}) => {
 
     const errorHandler = {
       error: {
-        status_code: code,
         code: dataBuilder[statusCode],
       },
     };
+
+    if (camelCase === true) {
+      errorHandler.error.statusCode = code;
+    } else {
+      errorHandler.error.status_code = code;
+    }
 
     if (err.message && err.message !== '') {
       errorHandler.error.message = err.message;
