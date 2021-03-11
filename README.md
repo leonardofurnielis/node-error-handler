@@ -49,7 +49,7 @@ app.use(errorHandler({ log: true, debug: true, camel_case: true }));
 | ------ |------|---------| ------------ |
 | log | Boolean \| Function | `false`| If `true` all errors are printed with stderr. If `function` use custom fuction defined by user. |
 | debug| Boolean | `false` | If `true` the stack trace is attached to output. |
-| camel_case | Boolean | false | If `true` The camelCase approach is used by error handler. |
+| camel_case | Boolean | `false` | If `true` The camelCase approach is used by error handler. |
   
 
 ### Customizing log
