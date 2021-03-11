@@ -1,8 +1,8 @@
 {
-  "extends": ["airbnb", "prettier"],
-  "plugins": ["prettier"],
+  "extends": ["airbnb", "prettier", "plugin:jest/style"],
+  "plugins": ["prettier", "jest"],
   "parserOptions": {
-    "ecmaVersion": 2021,
+    "ecmaVersion": 2020,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
@@ -11,16 +11,18 @@
   "env": {
     "node": true,
     "es6": true,
-    "jest": true
+    "jest": true,
+    "jest/globals": true
   },
+  "globals": {},
   "rules": {
     "prettier/prettier": ["error"],
+    "no-use-before-define": ["error", { "functions": false }],
+    "no-async-promise-executor": "off",
     "no-param-reassign": "off",
     "consistent-return": "off",
-    "no-underscore-dangle": ["error", {}],
     "no-plusplus": "off",
     "no-console": "off",
-    "camelcase": "off",
     "strict": "off"
   }
 }
