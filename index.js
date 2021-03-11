@@ -10,6 +10,13 @@ const dataBuilder = require('./lib/data-builder');
 const logger = require('./lib/logger');
 const validator = require('./lib/validator');
 
+/**
+ * Express error handlers for JSON APIs in development and production environments.
+ * @param {Object} [options]
+ * @param {Boolean} options.log - If true all errors are printed with stderr. If function use custom fuction defined by user.
+ * @param {Boolean|Function} options.debug - If true stack trace is attached to output.
+ * @param {Boolean} options.camel_case - If true the camelCase approach is used by error handler.
+ */
 module.exports = (options = {}) => {
   const debug = options.debug || false;
   const log = options.log || false;
