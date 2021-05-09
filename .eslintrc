@@ -1,5 +1,5 @@
 {
-  "extends": ["eslint:recommended", "plugin:prettier/recommended", "plugin:jest/style"],
+  "extends": ["eslint:recommended", "google", "plugin:prettier/recommended", "plugin:jest/style"],
   "plugins": ["prettier", "jest"],
   "parserOptions": {
     "ecmaVersion": 2020,

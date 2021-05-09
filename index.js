@@ -16,6 +16,7 @@ const validator = require('./lib/validator');
  * @param {Boolean} options.log - If true all errors are printed with stderr. If function use custom fuction defined by user.
  * @param {Boolean|Function} options.debug - If true the stack trace is attached to output.
  * @param {Boolean} options.camel_case - If true the camelCase approach is used by error handler.
+ * @return {VoidFunction}
  */
 module.exports = (options = {}) => {
   const debug = options.debug || false;
