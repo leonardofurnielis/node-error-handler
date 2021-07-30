@@ -6,6 +6,9 @@ npm-debug.log*
 coverage
 *.lcov
 
+# Github directory
+.github
+
 # Dependency directories
 node_modules/
 package-lock.json
