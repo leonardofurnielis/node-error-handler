@@ -78,13 +78,13 @@ function saveErrorLogs (err, obj, req) {
 { "error": { "statusCode": 500,"code": "INTERNAL_SERVER_ERROR" } }
 ```
 
-5xx error  `debug: false`:
+5xx error  `trace: false`:
 
 ```
 { "error": { "status_code": 500,"code": "INTERNAL_SERVER_ERROR" } }
 ```
 
-5xx error  `debug: true`:
+5xx error  `trace: true`:
 
 ```
 { "error": 
