@@ -48,7 +48,7 @@ app.use(errorHandler({ log: true, trace: true, camel_case: true }));
 | Option | Type | Default | Description  |
 | ------ |------|---------| ------------ |
 | log | Boolean \| Function | `false`| If `true` all errors are printed with stderr. If `function` use custom fuction defined by user. |
-| trace| Boolean | `false` | If `true` the stack trace is attached to output. |
+| trace| Boolean | `false` | If `true` the trace is attached to output. |
 | camel_case | Boolean | `false` | If `true` The camelCase approach is used by error handler. |
   
 
@@ -90,7 +90,7 @@ function saveErrorLogs (err, obj, req) {
 { "error": 
   { "status_code": 500,
     "code": "INTERNAL_SERVER_ERROR",
-    "stack":   
+    "trace":   
     at Module._compile (internal/modules/cjs/loader.js:892:18)
     at Object.Module._extensions..js (internal/modules/cjs/loader.js:973:10)
     at Module.load (internal/modules/cjs/loader.js:812:32)
@@ -112,7 +112,7 @@ The error could contain the following fields:
 | status_code | HTTP status code for response. Default value: `500` (Internal Server Error). |
 | message | Error message. |
 | code | Error code. |
-| stack | Error stack trace including data such as file paths, URLs. |
+| trace | Error trace including data such as file paths, URLs. |
 
 
 ## License
