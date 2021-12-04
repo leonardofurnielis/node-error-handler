@@ -14,12 +14,12 @@ const validation = require('./src/Validation');
  * Express error handlers for JSON APIs in development and production environments.
  * @param {Object} [options]
  * @param {Boolean} options.log - If true all errors are printed with stderr. If function use custom fuction defined by user.
- * @param {Boolean|Function} options.debug - If true the stack trace is attached to output.
+ * @param {Boolean|Function} options.trace - If true the trace is attached to output.
  * @param {Boolean} options.camel_case - If true the camelCase approach is used by error handler.
  * @return {VoidFunction}
  */
 module.exports = (options = {}) => {
-  const debug = options.debug || false;
+  const trace = options.trace || false;
   const log = options.log || false;
   const camelCase = options.camel_case || false;
 
@@ -27,12 +27,11 @@ module.exports = (options = {}) => {
 
   // eslint-disable-next-line no-unused-vars
   return (err, req, res, next) => {
-    const statusCode = validation.isHTTPCode(err.code) || 500;
-    const code = statusCode;
+    const code = validation.isHTTPCode(err.code) || 500;
 
     const errorHandler = {
       error: {
-        code: HttpStatus[statusCode],
+        code: HttpStatus[code],
       },
     };
 
@@ -46,8 +45,8 @@ module.exports = (options = {}) => {
       errorHandler.error.message = err.message;
     }
 
-    if (debug) {
-      errorHandler.error.stack = err.stack;
+    if (trace) {
+      errorHandler.error.trace = err.stack;
     }
 
     if (log && typeof log === 'boolean') {
@@ -56,6 +55,6 @@ module.exports = (options = {}) => {
       log(err, errorHandler, req);
     }
 
-    return res.status(statusCode).json(errorHandler);
+    return res.status(code).json(errorHandler);
   };
 };

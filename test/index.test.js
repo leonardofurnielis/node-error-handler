@@ -60,16 +60,17 @@ describe('HTTP Handler an JSON error', () => {
     expect(response.error.status_code).toBe(400);
   });
 
-  test('When debug=true, should returns full error stack traces', async () => {
+  test('When trace=true, should returns full error traces', async () => {
     const req = httpMocks.createRequest();
     const res = httpMocks.createResponse();
     const error = new Error();
     error.code = 500;
 
-    errorHandler({ debug: true })(error, req, res, {});
+    errorHandler({ trace: true })(error, req, res, {});
 
     const response = JSON.parse(res._getData());
-    expect(response.error.stack).toBeDefined();
+    console.log(JSON.parse(res._getData()));
+    expect(response.error.trace).toBeDefined();
   });
 
   test('When defined custom function, should use custom log function', async () => {
