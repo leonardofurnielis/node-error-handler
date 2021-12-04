@@ -6,9 +6,9 @@
 
 'use strcit';
 
-const dataBuilder = require('./lib/data-builder');
-const logger = require('./lib/logger');
-const validator = require('./lib/validator');
+const dataBuilder = require('./src/data-builder');
+const logger = require('./src/logger');
+const validator = require('./src/validator');
 
 /**
  * Express error handlers for JSON APIs in development and production environments.
