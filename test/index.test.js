@@ -15,8 +15,8 @@ describe('HTTP Handler an JSON error', () => {
 
     const response = JSON.parse(res._getData());
 
-    expect(response.error.code).toEqual('INTERNAL_SERVER_ERROR');
-    expect(response.error.status_code).toEqual(500);
+    expect(response.error.code).toBe('INTERNAL_SERVER_ERROR');
+    expect(response.error.status_code).toBe(500);
   });
 
   test('When sent code 400, should return code 400', async () => {
@@ -29,8 +29,8 @@ describe('HTTP Handler an JSON error', () => {
 
     const response = JSON.parse(res._getData());
 
-    expect(response.error.code).toEqual('BAD_REQUEST');
-    expect(response.error.status_code).toEqual(400);
+    expect(response.error.code).toBe('BAD_REQUEST');
+    expect(response.error.status_code).toBe(400);
   });
 
   test('When sent code 400 with custom message, should return code 400 and custom message', async () => {
@@ -42,9 +42,9 @@ describe('HTTP Handler an JSON error', () => {
     errorHandler()(error, req, res, {});
 
     const response = JSON.parse(res._getData());
-    expect(response.error.code).toEqual('BAD_REQUEST');
-    expect(response.error.message).toEqual('Missing fields: [name]');
-    expect(response.error.status_code).toEqual(400);
+    expect(response.error.code).toBe('BAD_REQUEST');
+    expect(response.error.message).toBe('Missing fields: [name]');
+    expect(response.error.status_code).toBe(400);
   });
 
   test('When log=true, should log with stderr', async () => {
@@ -56,8 +56,8 @@ describe('HTTP Handler an JSON error', () => {
     errorHandler({ log: true })(error, req, res, {});
 
     const response = JSON.parse(res._getData());
-    expect(response.error.code).toEqual('BAD_REQUEST');
-    expect(response.error.status_code).toEqual(400);
+    expect(response.error.code).toBe('BAD_REQUEST');
+    expect(response.error.status_code).toBe(400);
   });
 
   test('When debug=true, should returns full error stack traces', async () => {
@@ -85,9 +85,9 @@ describe('HTTP Handler an JSON error', () => {
     })(error, req, res, {});
 
     const response = JSON.parse(res._getData());
-    expect(response.error.message).toEqual('Using custom log function.');
-    expect(response.error.code).toEqual('INTERNAL_SERVER_ERROR');
-    expect(response.error.status_code).toEqual(500);
+    expect(response.error.message).toBe('Using custom log function.');
+    expect(response.error.code).toBe('INTERNAL_SERVER_ERROR');
+    expect(response.error.status_code).toBe(500);
   });
 
   test('When defined camel_case=true, should use camelCase response object', async () => {

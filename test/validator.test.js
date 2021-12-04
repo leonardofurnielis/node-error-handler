@@ -8,7 +8,7 @@ describe('isHTTPCode()', () => {
   });
 
   test('When code=200, should return 200', () => {
-    expect(validator.isHTTPCode(200)).toEqual(200);
+    expect(validator.isHTTPCode(200)).toBe(200);
   });
 });
 
