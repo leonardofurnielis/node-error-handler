@@ -13,8 +13,8 @@ const validation = require('./src/Validation');
 /**
  * Express error handlers for JSON APIs in development and production environments.
  * @param {Object} [options]
- * @param {Boolean} options.log - If true all errors are printed with stderr. If function use custom fuction defined by user.
- * @param {Boolean|Function} options.trace - If true the trace is attached to output.
+ * @param {Boolean|Function} options.log - If true all errors are printed with stderr. If function use custom fuction defined by user.
+ * @param {Boolean} options.trace - If true the trace is attached to output.
  * @param {Boolean} options.camel_case - If true the camelCase approach is used by error handler.
  * @return {VoidFunction}
  */

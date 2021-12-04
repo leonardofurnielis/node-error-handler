@@ -69,7 +69,7 @@ describe('HTTP Handler an JSON error', () => {
     errorHandler({ trace: true })(error, req, res, {});
 
     const response = JSON.parse(res._getData());
-    console.log(JSON.parse(res._getData()));
+
     expect(response.error.trace).toBeDefined();
   });
 
