@@ -6,9 +6,9 @@
 
 'use strcit';
 
-const dataBuilder = require('./src/data-builder');
-const logger = require('./src/logger');
-const validator = require('./src/validator');
+const HttpStatus = require('./src/resources/HttpStatus');
+const logging = require('./src/Logging');
+const validation = require('./src/Validation');
 
 /**
  * Express error handlers for JSON APIs in development and production environments.
@@ -23,16 +23,16 @@ module.exports = (options = {}) => {
   const log = options.log || false;
   const camelCase = options.camel_case || false;
 
-  validator.isLog(log);
+  validation.isLog(log);
 
   // eslint-disable-next-line no-unused-vars
   return (err, req, res, next) => {
-    const statusCode = validator.isHTTPCode(err.code) || 500;
+    const statusCode = validation.isHTTPCode(err.code) || 500;
     const code = statusCode;
 
     const errorHandler = {
       error: {
-        code: dataBuilder[statusCode],
+        code: HttpStatus[statusCode],
       },
     };
 
@@ -51,7 +51,7 @@ module.exports = (options = {}) => {
     }
 
     if (log && typeof log === 'boolean') {
-      logger.error(errorHandler);
+      logging.error(errorHandler);
     } else if (log && typeof log === 'function') {
       log(err, errorHandler, req);
     }

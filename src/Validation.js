@@ -6,7 +6,7 @@
 
 'use strcit';
 
-const dataBuilder = require('./data-builder');
+const HttpStatus = require('./resources/HttpStatus');
 
 /**
  * Validate status_code defined by user.
@@ -15,7 +15,7 @@ const dataBuilder = require('./data-builder');
  */
 const isHTTPCode = (code) => {
   code = Number(code);
-  if (dataBuilder[code]) {
+  if (HttpStatus[code]) {
     return code;
   }
   return undefined;
