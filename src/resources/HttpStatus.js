@@ -1,6 +1,6 @@
 /*
  * node-error-handler
- * Copyright 2019-2021 Leonardo Furnielis.
+ * Copyright 2019-2022 Leonardo Furnielis.
  * Licensed under MIT License
  */
 
