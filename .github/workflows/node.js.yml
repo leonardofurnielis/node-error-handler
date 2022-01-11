@@ -16,10 +16,11 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: ['14']
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
+    - run: npm install
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
@@ -28,5 +29,5 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm install -g codecov
-    - run: npm install
+    
     - run: npm test && codecov
