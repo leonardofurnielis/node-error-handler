@@ -30,6 +30,7 @@ const isLog = (log) => {
     throw new TypeError(`'log' value must be type 'boolean' or 'function'.`);
   }
 };
+
 module.exports = {
   isHTTPCode,
   isLog,
