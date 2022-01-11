@@ -6,7 +6,7 @@
 
 'use strcit';
 
-const httpStatus = require('./src/resources/httpStatus');
+const httpStatus = require('./src/resources/http-status-code');
 const logging = require('./src/logging');
 const validation = require('./src/validation');
 
