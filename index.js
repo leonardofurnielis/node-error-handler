@@ -6,9 +6,9 @@
 
 'use strcit';
 
-const HttpStatus = require('./src/resources/HttpStatus');
-const logging = require('./src/Logging');
-const validation = require('./src/Validation');
+const httpStatus = require('./src/resources/httpStatus');
+const logging = require('./src/logging');
+const validation = require('./src/validation');
 
 /**
  * Express error handlers for JSON APIs in development and production environments.
@@ -31,7 +31,7 @@ module.exports = (options = {}) => {
 
     const errorHandler = {
       error: {
-        code: HttpStatus[code],
+        code: httpStatus[code],
       },
     };
 

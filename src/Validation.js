@@ -6,7 +6,7 @@
 
 'use strcit';
 
-const HttpStatus = require('./resources/HttpStatus');
+const httpStatus = require('./resources/httpStatus');
 
 /**
  * Validate status_code defined by user.
@@ -15,7 +15,7 @@ const HttpStatus = require('./resources/HttpStatus');
  */
 const isHTTPCode = (code) => {
   code = Number(code);
-  if (HttpStatus[code]) {
+  if (httpStatus[code]) {
     return code;
   }
   return undefined;

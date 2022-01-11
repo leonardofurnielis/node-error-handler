@@ -1,6 +1,6 @@
 'use strict';
 
-const validation = require('../src/Validation');
+const validation = require('../src/validation');
 
 describe('isHTTPCode()', () => {
   test('When sent not valid code, should return undefined', () => {
