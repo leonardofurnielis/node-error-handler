@@ -47,19 +47,6 @@ describe('HTTP Handler an JSON error', () => {
     expect(response.error.status_code).toBe(400);
   });
 
-  test('When log=true, should log with stderr', async () => {
-    const req = httpMocks.createRequest();
-    const res = httpMocks.createResponse();
-    const error = new Error();
-    error.code = 400;
-
-    errorHandler({ log: true })(error, req, res, {});
-
-    const response = JSON.parse(res._getData());
-    expect(response.error.code).toBe('BAD_REQUEST');
-    expect(response.error.status_code).toBe(400);
-  });
-
   test('When trace=true, should returns full error traces', async () => {
     const req = httpMocks.createRequest();
     const res = httpMocks.createResponse();
