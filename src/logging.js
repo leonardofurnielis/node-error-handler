@@ -26,7 +26,7 @@ log4js.configure({
   },
 });
 
-const logging = log4js.getLogger('HTTP:node-error-handler');
+const logging = log4js.getLogger('HTTP:Error-Handling');
 logging.level = 'error';
 
 module.exports = logging;
