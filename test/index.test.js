@@ -60,24 +60,6 @@ describe('HTTP Handler an JSON error', () => {
     expect(response.error.trace).toBeDefined();
   });
 
-  test('When defined custom function, should use custom log function', async () => {
-    const req = httpMocks.createRequest();
-    const res = httpMocks.createResponse();
-    const error = new Error();
-    error.code = 500;
-
-    errorHandler({
-      log: (err, obj) => {
-        obj.error.message = 'Using custom log function.';
-      },
-    })(error, req, res, {});
-
-    const response = JSON.parse(res._getData());
-    expect(response.error.message).toBe('Using custom log function.');
-    expect(response.error.code).toBe('INTERNAL_SERVER_ERROR');
-    expect(response.error.status_code).toBe(500);
-  });
-
   test('When defined camel_case=true, should use camelCase response object', async () => {
     const req = httpMocks.createRequest();
     const res = httpMocks.createResponse();

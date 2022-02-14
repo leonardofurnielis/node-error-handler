@@ -13,17 +13,15 @@ const validation = require('./src/validation');
 /**
  * Express error handlers for JSON APIs in development and production environments.
  * @param {Object} [options]
- * @param {Boolean|Function} options.log - If true all errors are printed with stderr. If function use custom fuction defined by user.
+ * @param {Boolean} options.debug - If true all errors are printed with stderr.
  * @param {Boolean} options.trace - If true the trace is attached to output.
  * @param {Boolean} options.camel_case - If true the camelCase approach is used by error handler.
  * @return {VoidFunction}
  */
 module.exports = (options = {}) => {
   const trace = options.trace || false;
-  const log = options.log || false;
+  const debug = options.debug || false;
   const camelCase = options.camel_case || false;
-
-  validation.isLog(log);
 
   // eslint-disable-next-line no-unused-vars
   return (err, req, res, next) => {
@@ -49,10 +47,8 @@ module.exports = (options = {}) => {
       errorHandler.error.trace = err.stack;
     }
 
-    if (log && typeof log === 'boolean') {
+    if (debug === true) {
       logging.error(errorHandler);
-    } else if (log && typeof log === 'function') {
-      log(err, errorHandler, req);
     }
 
     return res.status(code).json(errorHandler);

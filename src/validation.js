@@ -21,17 +21,6 @@ const isHTTPCode = (code) => {
   return undefined;
 };
 
-/**
- * Validate user log param.
- * @param {Boolean|Function} log - The log param defined by user.
- */
-const isLog = (log) => {
-  if (typeof log !== 'boolean' && typeof log !== 'function') {
-    throw new TypeError(`'log' value must be type 'boolean' or 'function'.`);
-  }
-};
-
 module.exports = {
   isHTTPCode,
-  isLog,
 };
