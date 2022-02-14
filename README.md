@@ -37,7 +37,7 @@ app.get('/foo', (req, res, next) => {
 });
 
 // HTTP errorHandler
-app.use(errorHandler({ log: true, trace: true, camel_case: true }));
+app.use(errorHandler({ debug: true, trace: true, camel_case: true }));
 
 ```
 
@@ -47,22 +47,10 @@ app.use(errorHandler({ log: true, trace: true, camel_case: true }));
   
 | Option | Type | Default | Description  |
 | ------ |------|---------| ------------ |
-| log | Boolean \| Function | `false`| If `true` all errors are printed with stderr. If `function` use custom fuction defined by user. |
+| debug | Boolean | `false`| If `true` all errors are printed with stderr. |
 | trace| Boolean | `false` | If `true` the trace is attached to output. |
 | camel_case | Boolean | `false` | If `true` The camelCase approach is used by error handler. |
   
-
-### Customizing log
-
-
-```js
-app.use(errorHandler({ log: saveErrorLogs }));
-
-function saveErrorLogs (err, obj, req) {
-   // Do some stuff
-}
-```
-
 
 ## Example
 
