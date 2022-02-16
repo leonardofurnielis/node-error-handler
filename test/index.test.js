@@ -15,8 +15,10 @@ describe('ErrorHandler()', () => {
 
     const response = JSON.parse(res._getData());
 
-    expect(response.error.code).toBe('INTERNAL_SERVER_ERROR');
-    expect(response.error.status_code).toBe(500);
+    expect(response.error).toMatchObject({
+      code: 'INTERNAL_SERVER_ERROR',
+      status_code: 500,
+    });
   });
 
   test('When sent code 400, should return code 400', async () => {
@@ -29,8 +31,10 @@ describe('ErrorHandler()', () => {
 
     const response = JSON.parse(res._getData());
 
-    expect(response.error.code).toBe('BAD_REQUEST');
-    expect(response.error.status_code).toBe(400);
+    expect(response.error).toMatchObject({
+      code: 'BAD_REQUEST',
+      status_code: 400,
+    });
   });
 
   test('When sent code 400 with custom message, should return code 400 and custom message', async () => {
@@ -42,9 +46,12 @@ describe('ErrorHandler()', () => {
     errorHandler()(error, req, res, {});
 
     const response = JSON.parse(res._getData());
-    expect(response.error.code).toBe('BAD_REQUEST');
-    expect(response.error.message).toBe('Missing fields: [name]');
-    expect(response.error.status_code).toBe(400);
+
+    expect(response.error).toMatchObject({
+      code: 'BAD_REQUEST',
+      status_code: 400,
+      message: 'Missing fields: [name]',
+    });
   });
 
   test('When trace=true, should returns full error traces', async () => {
