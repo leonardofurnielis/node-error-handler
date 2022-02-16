@@ -35,10 +35,12 @@ module.exports = (options = {}) => {
       },
     };
 
-    // const correlationId = 'X-Correlation-ID';
-    // if((req.headers[correlationId] && !req.headers[correlationId].trim() === '') || req.correlationId && req.correlationId.trim() === '') {
-
-    // }
+    const correlationId = 'x-correlation-id';
+    if (req.headers && req.headers[correlationId] && req.headers[correlationId].trim() !== '') {
+      errorHandler.error.correlation_id = req.headers[correlationId].trim();
+    } else if (req.correlationId && req.correlationId.trim() !== '') {
+      errorHandler.error.correlation_id = req.correlationId.trim();
+    }
 
     if (err.message && err.message !== '') {
       errorHandler.error.message = err.message;
