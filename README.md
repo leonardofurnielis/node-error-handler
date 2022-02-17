@@ -105,8 +105,8 @@ The error could contain the following fields:
 | --------- | -------------------------------------------------------------------- |
 | status_code | HTTP status code for response. Default value: `500` (Internal Server Error). |
 | message | Error message. |
-| code | Error code. |
-| trace | Error trace including data such as file paths, URLs. |
+| code | Error code, associated with `status_code`. |
+| trace | Trace including data for dubug such as file, paths. |
 | correlation_id | Unique identifier value that is attached to requests and messages that allow reference to a particular transaction or event chain. |
 
 
