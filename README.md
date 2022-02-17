@@ -72,6 +72,12 @@ app.use(errorHandler({ debug: true, trace: true, camel_case: true }));
 { "error": { "status_code": 500,"code": "INTERNAL_SERVER_ERROR" } }
 ```
 
+5xx error  `with correlation_id`:
+
+```
+{ "error": { "status_code": 500,"code": "INTERNAL_SERVER_ERROR", "correlation_id": "7616e2d3-6b90-43ba-8548-f6en12384f39" } }
+```
+
 5xx error  `trace: true`:
 
 ```
@@ -101,6 +107,7 @@ The error could contain the following fields:
 | message | Error message. |
 | code | Error code. |
 | trace | Error trace including data such as file paths, URLs. |
+| correlation_id | Unique identifier value that is attached to requests and messages that allow reference to a particular transaction or event chain. |
 
 
 ## License
