@@ -9,6 +9,7 @@
 const httpStatus = require('./src/resources/http-status-code');
 const logging = require('./src/logging');
 const validation = require('./src/validation');
+const convertToCamelCase = require('./src/camel-case-convert');
 
 /**
  * Express error handlers for JSON APIs in development and production environments.
@@ -30,13 +31,15 @@ module.exports = (options = {}) => {
     const errorHandler = {
       error: {
         code: httpStatus[code],
+        status_code: code,
       },
     };
 
-    if (camelCase === true) {
-      errorHandler.error.statusCode = code;
-    } else {
-      errorHandler.error.status_code = code;
+    const correlationId = 'x-correlation-id';
+    if (req.headers && req.headers[correlationId] && req.headers[correlationId].trim() !== '') {
+      errorHandler.error.correlation_id = req.headers[correlationId].trim();
+    } else if (req.correlationId && req.correlationId.trim() !== '') {
+      errorHandler.error.correlation_id = req.correlationId.trim();
     }
 
     if (err.message && err.message !== '') {
@@ -49,6 +52,10 @@ module.exports = (options = {}) => {
 
     if (debug === true) {
       logging.error(errorHandler);
+    }
+
+    if (camelCase === true) {
+      errorHandler.error = convertToCamelCase(errorHandler.error);
     }
 
     return res.status(code).json(errorHandler);
