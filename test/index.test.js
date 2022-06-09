@@ -79,10 +79,10 @@ describe('ErrorHandler()', () => {
   });
 });
 
-describe('X-Correlation-ID', () => {
-  test(' When req.headers.x-correlation-id exist, should add to error response object', async () => {
+describe('X-transaction-ID', () => {
+  test(' When req.headers x-transaction-id exist, should add to error response object', async () => {
     const req = httpMocks.createRequest({
-      headers: { 'X-Correlation-ID': '7616e2d3-6b90-43ba-8548-f6en12384f39' },
+      headers: { 'X-Transaction-ID': '7616e2d3-6b90-43ba-8548-f6en12384f39' },
     });
     const res = httpMocks.createResponse();
 
@@ -94,13 +94,13 @@ describe('X-Correlation-ID', () => {
     expect(response.error).toMatchObject({
       code: 'INTERNAL_SERVER_ERROR',
       status_code: 500,
-      correlation_id: '7616e2d3-6b90-43ba-8548-f6en12384f39',
+      transaction_id: '7616e2d3-6b90-43ba-8548-f6en12384f39',
     });
   });
 
-  test(' When req.headers.x-correlation-id empty, should ignore x-correlation-id', async () => {
+  test(' When req.headers. x-transaction-id empty, should ignore x-transaction-id', async () => {
     const req = httpMocks.createRequest({
-      headers: { 'X-Correlation-ID': ' ' },
+      headers: { 'X-transaction-ID': ' ' },
     });
     const res = httpMocks.createResponse();
 
@@ -115,9 +115,9 @@ describe('X-Correlation-ID', () => {
     });
   });
 
-  test(' When req.headers.x-correlation-id undefined, should ignore x-correlation-id', async () => {
+  test(' When req.headers. x-transaction-id undefined, should ignore x-transaction-id', async () => {
     const req = httpMocks.createRequest({
-      headers: { 'X-Correlation-ID': undefined },
+      headers: { 'X-transaction-ID': undefined },
     });
     const res = httpMocks.createResponse();
 
@@ -132,8 +132,8 @@ describe('X-Correlation-ID', () => {
     });
   });
 
-  test('When req.correlationId exist, should add to error response object', async () => {
-    const req = { correlationId: '7616e2d3-6b90-43ba-8548-f6en12384f39' };
+  test('When req.transactionId exist, should add to error response object', async () => {
+    const req = { transactionId: '7616e2d3-6b90-43ba-8548-f6en12384f39' };
     const res = httpMocks.createResponse();
 
     const error = new Error();
@@ -144,12 +144,12 @@ describe('X-Correlation-ID', () => {
     expect(response.error).toMatchObject({
       code: 'INTERNAL_SERVER_ERROR',
       status_code: 500,
-      correlation_id: '7616e2d3-6b90-43ba-8548-f6en12384f39',
+      transaction_id: '7616e2d3-6b90-43ba-8548-f6en12384f39',
     });
   });
 
-  test('When req.correlationId empty, should ignore x-correlation-id', async () => {
-    const req = { correlationId: ' ' };
+  test('When req.transactionId empty, should ignore x-transaction-id', async () => {
+    const req = { transactionId: ' ' };
     const res = httpMocks.createResponse();
 
     const error = new Error();
@@ -163,8 +163,8 @@ describe('X-Correlation-ID', () => {
     });
   });
 
-  test('When req.correlationId undefined, should ignore x-correlation-id', async () => {
-    const req = { correlationId: undefined };
+  test('When req.transactionId undefined, should ignore x-transaction-id', async () => {
+    const req = { transactionId: undefined };
     const res = httpMocks.createResponse();
 
     const error = new Error();
