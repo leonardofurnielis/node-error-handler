@@ -35,11 +35,11 @@ module.exports = (options = {}) => {
       },
     };
 
-    const correlationId = 'x-correlation-id';
-    if (req.headers && req.headers[correlationId] && req.headers[correlationId].trim() !== '') {
-      errorHandler.error.correlation_id = req.headers[correlationId].trim();
-    } else if (req.correlationId && req.correlationId.trim() !== '') {
-      errorHandler.error.correlation_id = req.correlationId.trim();
+    const transactionId = 'x-transaction-id';
+    if (req.headers && req.headers[transactionId] && req.headers[transactionId].trim() !== '') {
+      errorHandler.error.correlation_id = req.headers[transactionId].trim();
+    } else if (req.transactionId && req.transactionId.trim() !== '') {
+      errorHandler.error.transaction_id = req.transactionId.trim();
     }
 
     if (err.message && err.message !== '') {
