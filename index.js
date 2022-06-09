@@ -37,7 +37,7 @@ module.exports = (options = {}) => {
 
     const transactionId = 'x-transaction-id';
     if (req.headers && req.headers[transactionId] && req.headers[transactionId].trim() !== '') {
-      errorHandler.error.correlation_id = req.headers[transactionId].trim();
+      errorHandler.error.transaction_id = req.headers[transactionId].trim();
     } else if (req.transactionId && req.transactionId.trim() !== '') {
       errorHandler.error.transaction_id = req.transactionId.trim();
     }

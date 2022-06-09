@@ -79,7 +79,7 @@ describe('ErrorHandler()', () => {
   });
 });
 
-describe('X-transaction-ID', () => {
+describe('x-transaction-id', () => {
   test(' When req.headers x-transaction-id exist, should add to error response object', async () => {
     const req = httpMocks.createRequest({
       headers: { 'X-Transaction-ID': '7616e2d3-6b90-43ba-8548-f6en12384f39' },
