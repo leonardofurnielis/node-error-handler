@@ -1,6 +1,6 @@
 {
   "name": "node-error-handler",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "Express error handlers for JSON APIs in development and production environments",
   "main": "index.js",
   "scripts": {
