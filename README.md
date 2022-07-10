@@ -37,7 +37,7 @@ app.get('/foo', (req, res, next) => {
 });
 
 // HTTP errorHandler
-app.use(errorHandler({ debug: true, trace: true, camel_case: true }));
+app.use(errorHandler({ debug: true, trace: app.get('env') === 'development', camel_case: true }));
 
 ```
 
