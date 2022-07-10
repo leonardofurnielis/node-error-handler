@@ -7,7 +7,6 @@
 'use strcit';
 
 const httpStatus = require('./src/resources/http-status-code');
-const logging = require('./src/logging');
 const validation = require('./src/validation');
 const convertToCamelCase = require('./src/camel-case-convert');
 
@@ -51,7 +50,7 @@ module.exports = (options = {}) => {
     }
 
     if (debug === true) {
-      logging.error(errorHandler);
+      console.error(errorHandler);
     }
 
     if (camelCase === true) {
