@@ -48,7 +48,7 @@ app.use(errorHandler({ debug: true, trace: true, camel_case: true }));
 | Option | Type | Default | Description  |
 | ------ |------|---------| ------------ |
 | debug | Boolean | `false`| If `true` all errors are printed with stderr. |
-| trace| Boolean | `false` | If `true` the trace is attached to output. |
+| trace| Boolean | `false` | If `true` the trace is attached to output. (Recommended use in development only) |
 | camel_case | Boolean | `false` | If `true` The camelCase approach is used by error handler. |
   
 
