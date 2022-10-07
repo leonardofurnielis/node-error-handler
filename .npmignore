@@ -5,6 +5,7 @@ coverage
 .editorconfig
 .DS_Store
 .vscode/
+.github/
 node_modules/
 dist/
 *.log
