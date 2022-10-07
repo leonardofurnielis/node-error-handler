@@ -2,7 +2,7 @@
 
 
 ![npm](https://img.shields.io/npm/v/node-error-handler)
-![workflow](https://github.com/leonardofurnielis/node-error-handler/actions/workflows/test-coverage.yml/badge.svg)
+![workflow](https://github.com/leonardofurnielis/node-error-handler/actions/workflows/build-test.yml/badge.svg)
 [![codecov](https://codecov.io/gh/leonardofurnielis/node-error-handler/branch/master/graph/badge.svg)](https://codecov.io/gh/leonardofurnielis/node-error-handler)
 ![GitHub](https://img.shields.io/github/license/leonardofurnielis/node-error-handler.svg)
 ![npm](https://img.shields.io/npm/dm/node-error-handler.svg)
