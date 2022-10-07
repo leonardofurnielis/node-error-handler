@@ -1,17 +1,10 @@
-### Node ###
-# Logs
+npm-debug.log
 npm-debug.log*
-
-# Coverage directory used by tools like istanbul
 coverage
-*.lcov
-
-# Dependency directories
-node_modules/
-
-# rollup.js default build output
-dist/
-
-# VS Code
 .DS_Store
 .vscode/
+node_modules/
+dist/
+*.log
+*.tmp
+*.lcov

@@ -2,6 +2,7 @@
  * node-error-handler
  * Licensed under Apache-2.0 License
  */
+
 'use strcit';
 
 const httpStatus = require('./resources/http-status-code');

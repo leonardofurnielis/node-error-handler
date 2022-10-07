@@ -1,21 +1,13 @@
-### Node ###
-# Logs
+test/
+npm-debug.log
 npm-debug.log*
-
-# Coverage directory used by tools like istanbul
 coverage
-*.lcov
-
-# Github directory
-.github
-
-# Dependency directories
-node_modules/
-package-lock.json
-
-# rollup.js default build output
-dist/
-
-# VS Code
+.editorconfig
 .DS_Store
 .vscode/
+node_modules/
+dist/
+*.log
+*.tmp
+*.lcov
+LICENSE
