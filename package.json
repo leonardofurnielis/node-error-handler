@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/leonardofurnielis/node-error-handler#readme",
   "author": "Leonardo Furnielis <leonardofurnielis@outlook.com>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "devDependencies": {
     "codecov": "3.8.3",
     "eslint": "8.19.0",

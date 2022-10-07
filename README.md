@@ -112,4 +112,4 @@ The error could contain the following fields:
 
 ## License
 
-[MIT](LICENSE)
+[Apache-2.0](LICENSE)

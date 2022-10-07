@@ -1,7 +1,6 @@
 /*
  * node-error-handler
- * Copyright 2019-2022 Leonardo Furnielis.
- * Licensed under MIT License
+ * Licensed under Apache-2.0 License
  */
 
 'use strcit';
