@@ -133,7 +133,7 @@ describe('x-transaction-id', () => {
   });
 
   test('When req.transactionId exist, should add to error response object', async () => {
-    const req = { transactionId: '7616e2d3-6b90-43ba-8548-f6en12384f39' };
+    const req = { transaction_id: '7616e2d3-6b90-43ba-8548-f6en12384f39' };
     const res = httpMocks.createResponse();
 
     const error = new Error();

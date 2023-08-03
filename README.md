@@ -97,4 +97,4 @@ The error object could contain the following fields:
 
 ## License
 
-[Apache-2.0](LICENSE)
+[MIT](LICENSE)

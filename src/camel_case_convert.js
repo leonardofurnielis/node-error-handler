@@ -5,7 +5,7 @@
 
 'use strcit';
 
-const camelCase = require('camelcase');
+const camel_case = require('camelcase');
 
 /**
  * Convert object keys dash/dot/underscore/space separated string to camelCase.
@@ -14,9 +14,9 @@ const camelCase = require('camelcase');
  */
 module.exports = (obj) => {
   Object.keys(obj).forEach((key) => {
-    obj[camelCase(key)] = obj[key];
+    obj[camel_case(key)] = obj[key];
 
-    if (camelCase(key) !== key) {
+    if (camel_case(key) !== key) {
       delete obj[key];
     }
   });

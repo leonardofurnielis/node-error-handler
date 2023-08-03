@@ -5,9 +5,9 @@
 
 'use strcit';
 
-const httpStatus = require('./src/resources/http-status-code');
+const http_status = require('./src/resources/http_status_code');
 const validation = require('./src/validation');
-const convertToCamelCase = require('./src/camel-case-convert');
+const convert_to_camelcase = require('./src/camel_case_convert');
 
 /**
  * Express error handlers for JSON APIs in development and production environments.
@@ -24,38 +24,38 @@ module.exports = (options = {}) => {
 
   // eslint-disable-next-line no-unused-vars
   return (err, req, res, next) => {
-    const code = validation.isHTTPCode(err.code) || 500;
+    const code = validation.is_http_code(err.code) || 500;
 
-    const errorHandler = {
+    const error_handler = {
       error: {
-        code: httpStatus[code],
+        code: http_status[code],
         status_code: code,
       },
     };
 
-    const transactionId = 'x-transaction-id';
-    if (req.headers && req.headers[transactionId] && req.headers[transactionId].trim() !== '') {
-      errorHandler.error.transaction_id = req.headers[transactionId].trim();
-    } else if (req.transactionId && req.transactionId.trim() !== '') {
-      errorHandler.error.transaction_id = req.transactionId.trim();
+    const transaction_id = 'x-transaction-id';
+    if (req.headers && req.headers[transaction_id] && req.headers[transaction_id].trim() !== '') {
+      error_handler.error.transaction_id = req.headers[transaction_id].trim();
+    } else if (req.transaction_id && req.transaction_id.trim() !== '') {
+      error_handler.error.transaction_id = req.transaction_id.trim();
     }
 
     if (err.message && err.message !== '') {
-      errorHandler.error.message = err.message;
+      error_handler.error.message = err.message;
     }
 
     if (trace) {
-      errorHandler.error.trace = err.stack;
+      error_handler.error.trace = err.stack;
     }
 
     if (debug === true) {
-      console.error(errorHandler);
+      console.error(error_handler);
     }
 
     if (camelCase === true) {
-      errorHandler.error = convertToCamelCase(errorHandler.error);
+      error_handler.error = convert_to_camelcase(error_handler.error);
     }
 
-    return res.status(code).json(errorHandler);
+    return res.status(code).json(error_handler);
   };
 };

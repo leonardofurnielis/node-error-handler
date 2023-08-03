@@ -5,21 +5,21 @@
 
 'use strcit';
 
-const httpStatus = require('./resources/http-status-code');
+const http_status = require('./resources/http_status_code');
 
 /**
  * Validate status_code defined by user.
  * @param {Number} code - The status_code defined by user.
  * @return {Number} - If valid status_code return code if invalid return undefined.
  */
-const isHTTPCode = (code) => {
+const is_http_code = (code) => {
   code = Number(code);
-  if (httpStatus[code]) {
+  if (http_status[code]) {
     return code;
   }
   return undefined;
 };
 
 module.exports = {
-  isHTTPCode,
+  is_http_code,
 };
