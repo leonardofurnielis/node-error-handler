@@ -18,7 +18,7 @@ In an [express](https://www.npmjs.com/package/express) based application:
 
 ```js
 const  express = require('express');
-const  errorHandler = require('node-error-handler');
+const  error_handler = require('node-error-handler');
   
 const  app = express();
 
@@ -30,8 +30,8 @@ app.get('/foo', (req, res, next) => {
   next(error);
 });
 
-// HTTP errorHandler
-app.use(errorHandler({ debug: true, trace: app.get('env') === 'development', camel_case: true }));
+// HTTP error_handler
+app.use(error_handler({ debug: true, trace: app.get('env') === 'development', camel_case: true }));
 ```
 
 ## Options
