@@ -1,6 +1,6 @@
 /*
  * node-error-handler
- * Licensed under Apache-2.0 License
+ * Licensed under MIT License
  */
 
 'use strcit';
