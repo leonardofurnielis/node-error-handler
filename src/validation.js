@@ -5,7 +5,7 @@
 
 'use strcit';
 
-const http_status = require('./resources/http_status_code');
+const http_status = require('./resources/http-status-code');
 
 /**
  * Validate status_code defined by user.

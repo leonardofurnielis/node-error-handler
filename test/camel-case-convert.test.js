@@ -1,6 +1,6 @@
 'use strict';
 
-const convertToCamelCase = require('../src/camel_case_convert');
+const convertToCamelCase = require('../src/camel-case-convert');
 
 describe('convertToCamelCase()', () => {
   const obj = {

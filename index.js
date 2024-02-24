@@ -5,9 +5,9 @@
 
 'use strcit';
 
-const http_status = require('./src/resources/http_status_code');
+const http_status = require('./src/resources/http-status-code');
 const validation = require('./src/validation');
-const convert_to_camelcase = require('./src/camel_case_convert');
+const convert_to_camelcase = require('./src/camel-case-convert');
 
 /**
  * Express error handlers for JSON APIs in development and production environments.
