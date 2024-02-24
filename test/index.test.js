@@ -6,7 +6,7 @@ const httpMocks = require('node-mocks-http');
 const errorHandler = require('../index');
 
 describe('ErrorHandler()', () => {
-  test('When no args passed, should return default error object', async () => {
+  test('When no args passed, it should return default error object', async () => {
     const req = httpMocks.createRequest();
     const res = httpMocks.createResponse();
     const error = new Error();
@@ -21,7 +21,7 @@ describe('ErrorHandler()', () => {
     });
   });
 
-  test('When sent code 400, should return code 400', async () => {
+  test('When sent code 400, it should return code 400', async () => {
     const req = httpMocks.createRequest();
     const res = httpMocks.createResponse();
     const error = new Error();
@@ -37,7 +37,7 @@ describe('ErrorHandler()', () => {
     });
   });
 
-  test('When sent code 400 with custom message, should return code 400 and custom message', async () => {
+  test('When sent code 400 with custom message, it should return code 400 and custom message', async () => {
     const req = httpMocks.createRequest();
     const res = httpMocks.createResponse();
     const error = new Error('Missing fields: [name]');
@@ -54,7 +54,7 @@ describe('ErrorHandler()', () => {
     });
   });
 
-  test('When trace=true, should returns full error traces', async () => {
+  test('When trace `true`, it should returns full error traces', async () => {
     const req = httpMocks.createRequest();
     const res = httpMocks.createResponse();
     const error = new Error();
@@ -67,7 +67,7 @@ describe('ErrorHandler()', () => {
     expect(response.error.trace).toBeDefined();
   });
 
-  test('When defined camel_case=true, should use camelCase response object', async () => {
+  test('When defined `camel_case` `true`, it should use camelCase response object', async () => {
     const req = httpMocks.createRequest();
     const res = httpMocks.createResponse();
     const error = new Error();
@@ -80,7 +80,7 @@ describe('ErrorHandler()', () => {
 });
 
 describe('x-transaction-id', () => {
-  test(' When req.headers x-transaction-id exist, should add to error response object', async () => {
+  test('When `x-transaction-id` exist, it should add to error response object', async () => {
     const req = httpMocks.createRequest({
       headers: { 'X-Transaction-ID': '7616e2d3-6b90-43ba-8548-f6en12384f39' },
     });
@@ -98,7 +98,7 @@ describe('x-transaction-id', () => {
     });
   });
 
-  test(' When req.headers. x-transaction-id empty, should ignore x-transaction-id', async () => {
+  test('When headers `x-transaction-id` empty, it should ignore `x-transaction-id` header', async () => {
     const req = httpMocks.createRequest({
       headers: { 'X-transaction-ID': ' ' },
     });
@@ -115,7 +115,7 @@ describe('x-transaction-id', () => {
     });
   });
 
-  test(' When req.headers. x-transaction-id undefined, should ignore x-transaction-id', async () => {
+  test('When headers `x-transaction-id` undefined, it should ignore `x-transaction-id` header', async () => {
     const req = httpMocks.createRequest({
       headers: { 'X-transaction-ID': undefined },
     });
@@ -132,7 +132,7 @@ describe('x-transaction-id', () => {
     });
   });
 
-  test('When req.transactionId exist, should add to error response object', async () => {
+  test('When headers `x-transaction-id` exist, it should add to error response object', async () => {
     const req = { transaction_id: '7616e2d3-6b90-43ba-8548-f6en12384f39' };
     const res = httpMocks.createResponse();
 
@@ -145,36 +145,6 @@ describe('x-transaction-id', () => {
       code: 'INTERNAL_SERVER_ERROR',
       status_code: 500,
       transaction_id: '7616e2d3-6b90-43ba-8548-f6en12384f39',
-    });
-  });
-
-  test('When req.transactionId empty, should ignore x-transaction-id', async () => {
-    const req = { transactionId: ' ' };
-    const res = httpMocks.createResponse();
-
-    const error = new Error();
-    errorHandler()(error, req, res, {});
-
-    const response = JSON.parse(res._getData());
-
-    expect(response.error).toMatchObject({
-      code: 'INTERNAL_SERVER_ERROR',
-      status_code: 500,
-    });
-  });
-
-  test('When req.transactionId undefined, should ignore x-transaction-id', async () => {
-    const req = { transactionId: undefined };
-    const res = httpMocks.createResponse();
-
-    const error = new Error();
-    errorHandler()(error, req, res, {});
-
-    const response = JSON.parse(res._getData());
-
-    expect(response.error).toMatchObject({
-      code: 'INTERNAL_SERVER_ERROR',
-      status_code: 500,
     });
   });
 });

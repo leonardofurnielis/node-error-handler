@@ -22,16 +22,23 @@ const  error_handler = require('node-error-handler');
   
 const  app = express();
 
-// Setup your middlewares
-// Setup your routes
+// Handling GET request to '/foo' endpoint
 app.get('/foo', (req, res, next) => {
+  // Creating a new Error object with a custom message
   const  error = new  Error('Missing field: `name`');
+  // Setting a custom error code
   error.code = 422;
+  
+   // Passing the error to the next middleware function
   next(error);
 });
 
-// HTTP error_handler
-app.use(error_handler({ debug: true, trace: app.get('env') === 'development', camel_case: true }));
+// Adding error handling middleware
+app.use(error_handler({ 
+  debug: true, // Enable debug mode
+  trace: app.get('env') === 'development', // Enable trace if environment is set to development
+  camel_case: true // Convert error keys to camel case
+  }));
 ```
 
 ## Options
