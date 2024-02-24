@@ -29,7 +29,7 @@ app.get('/foo', (req, res, next) => {
   // Setting a custom error code
   error.code = 422;
   
-   // Passing the error to the next middleware function
+  // Passing the error to the next middleware function
   next(error);
 });
 
